@@ -21,20 +21,35 @@ Desenvolver uma plataforma web capaz de transformar dados públicos em informaç
 ## Tecnologias
 
 ### Front-end
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
+- Chart.js
+- Leaflet
 
-### Tratamento de dados
+### Tratamento e análise de dados
 - Python
+- pandas
+- NumPy
+- GeoPandas
+- pdfplumber
+- openpyxl
+
+### Back-end
+- Python
+- FastAPI
+- Pydantic
+- SQLAlchemy
+- psycopg
 
 ### Banco de dados
-- PostgreSQL / SQL
+- PostgreSQL
+- PostGIS
 
-### Desenvolvimento futuro
-- Back-end e API em Python
-- Integração entre banco de dados e interface web
-
+### Desenvolvimento e versionamento
+- Git
+- GitHub
+- Visual Studio Code
 ## Estrutura do projeto
 
 ```text
