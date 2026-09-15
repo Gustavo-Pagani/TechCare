@@ -1,1 +1,21 @@
-/* style.css */
+.sidebar {
+ width: 250px;
+ height: 1000px;
+ background-color: #052f59;
+ padding: 24px; 
+ box-sizing: border-box;
+}
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 28px;
+}
