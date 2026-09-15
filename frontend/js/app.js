@@ -1,4 +1,4 @@
-fetch("/frontend/components/sidebar.html")
+fetch("/frontend/componentes/sidebar.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("sidebar").innerHTML = data;
