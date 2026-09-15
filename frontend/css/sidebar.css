@@ -1,0 +1,113 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+/* Define tamanho, cor e estrutura principal da barra lateral */
+.sidebar {
+    width: 293px;
+    height: 100vh;
+    background-color: #052f59;
+    padding: 24px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   CABEÇALHO DA SIDEBAR
+========================= */
+
+/* Organiza logo e textos do cabeçalho lado a lado */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    margin-top: -12px;
+}
+
+/* tamanho da logo */
+.sidebar-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+.sidebar-title {
+    color: white;
+    font-size: 32px;
+    margin: 0;
+
+}
+
+.sidebar-subtitle {
+    color: rgb(225, 218, 218);
+    
+}
+
+
+/* =========================
+   MENU DE NAVEGAÇÃO
+========================= */
+
+/* Remove as bolinhas e o espaçamento padrão da lista */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Define o espaçamento entre os itens do menu */
+.sidebar li {
+    margin-bottom: 30px;
+}
+
+/* Define a aparência dos links do menu */
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+/* =========================
+   FOOTER DA SIDEBAR
+========================= */
+
+/* Posiciona o footer na parte inferior da sidebar */
+.sidebar-footer {
+    margin-top: auto;
+}
+
+/* Define a aparência da caixa do footer */
+.sidebar-footer-card {
+    background-color: #174f7a;
+    padding: 14px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #28618c;
+}
+
+
+/* Define o tamanho dos textos menores do footer */
+
+
+.sidebar-footer-card h3 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+}
+
+.sidebar-footer-card p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+}
