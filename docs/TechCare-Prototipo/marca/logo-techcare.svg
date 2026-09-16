@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62" width="512" height="512" role="img" aria-label="TechCare">
+  <title>TechCare</title>
+  <defs>
+    <!-- corte diagonal seco: as duas paradas ficam a 1% de distancia, como no CSS original -->
+    <linearGradient id="tc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="45%" stop-color="#0866ba"/>
+      <stop offset="46%" stop-color="#16c5b9"/>
+    </linearGradient>
+  </defs>
+  <rect width="62" height="62" rx="18" ry="18" fill="url(#tc)"/>
+  <text x="31" y="31.75" fill="#ffffff" font-family="Manrope, 'Segoe UI', Arial, sans-serif"
+        font-weight="800" font-size="17" text-anchor="middle" dominant-baseline="central">TC</text>
+</svg>

@@ -1,0 +1,2 @@
+export { reason } from './reason.js'; export { overview } from './overview.js'; export { profiles } from './profiles.js'; export { territory } from './territory.js'; export { solutions } from './solutions.js'; export { method } from './method.js';
+import { reason } from './reason.js';import { overview } from './overview.js';import { profiles } from './profiles.js';import { territory } from './territory.js';import { solutions } from './solutions.js';import { method } from './method.js';export const pages={reason,overview,profiles,territory,solutions,method};
