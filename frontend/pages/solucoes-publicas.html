@@ -10,12 +10,18 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Soluções Publicas | TechCare</title>
+    <title>Soluções Públicas | TechCare</title>
 
+    <!-- Fonte usada no protótipo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
-        href="/frontend/css/sidebar.css" 
     >
+
+    <link rel="stylesheet" href="/frontend/css/sidebar.css">
+    <link rel="stylesheet" href="/frontend/css/solucoes-publicas.css">
 
 </head>
 
@@ -23,13 +29,244 @@
 
     <div id="sidebar"></div>
 
-    <main>
+    <main class="workspace">
 
-        <h1>Soluções Publicas</h1>
+        <!-- ===== Topo ===== -->
+        <header class="topbar">
+
+            <div>
+                <span class="eyebrow">PLANEJAMENTO PÚBLICO · CAMPINAS, SP</span>
+                <h1>Soluções Públicas</h1>
+                <p class="page-subtitle">
+                    Do diagnóstico à ação: um conjunto de soluções para uma cidade mais preparada.
+                </p>
+            </div>
+
+            <div class="header-actions">
+                <div class="years">
+                    <button class="selected" data-year="2022">2022</button>
+                    <button data-year="2030">2030</button>
+                    <button data-year="2040">2040</button>
+                    <button data-year="2050">2050</button>
+                </div>
+                <span class="data-pill">DADOS ILUSTRATIVOS</span>
+            </div>
+
+        </header>
+
+
+        <!-- ===== Objetivo (hero) ===== -->
+        <section class="hero-call">
+
+            <span class="round-icon mint">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>
+                </svg>
+            </span>
+
+            <div>
+                <h2>Objetivo</h2>
+                <p>
+                    Apresentar um conjunto de soluções públicas integradas para atender às diferentes
+                    necessidades da população idosa, com foco na prevenção, na manutenção da autonomia
+                    e na garantia de cuidado para os que mais precisam.
+                </p>
+            </div>
+
+            <div class="integrated">
+                <b>
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 3.2 5 6v5.5c0 4.2 3 7.5 7 9.3 4-1.8 7-5.1 7-9.3V6z"/><path d="M9.2 12.2l2 2 3.6-4"/>
+                    </svg>
+                    <span>Abordagem integrada</span>
+                </b>
+                <p>Saúde, assistência social, habitação, mobilidade e participação social.</p>
+            </div>
+
+        </section>
+
+
+        <!-- ===== Eixos de soluções ===== -->
+        <section class="panel">
+
+            <h2>Principais eixos de soluções</h2>
+            <p>Ações organizadas por nível de necessidade e ao longo da jornada do cuidado.</p>
+
+            <div class="axis-grid">
+
+                <!-- 1 -->
+                <article class="axis">
+                    <span class="round-icon green">
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9.5" cy="4" r="2.3"/><path d="M9.5 6.5v7.3"/><path d="M9.5 8.6 6.4 11.8"/><path d="M9.5 8.6 15 9.4"/><path d="M9.5 13.8 7.2 21"/><path d="M9.5 13.8 11.7 21"/><path d="M16.4 9.4v11.4"/><path d="M14.8 9.4h3.2"/>
+                        </svg>
+                    </span>
+                    <h3>1. Prevenção e Envelhecimento Ativo</h3>
+                    <p>Manter a autonomia e qualidade de vida por mais tempo.</p>
+                    <ul>
+                        <li>Programas de atividade física</li>
+                        <li>Vacinação e rastreamento</li>
+                        <li>Educação em saúde</li>
+                        <li>Centros de convivência</li>
+                        <li>Inclusão digital e social</li>
+                    </ul>
+                </article>
+
+                <!-- 2 -->
+                <article class="axis">
+                    <span class="round-icon sky">
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3.5 10.5 12 4l8.5 6.5"/><path d="M5.5 12v8h13v-8"/><path d="M10 20v-5h4v5"/>
+                        </svg>
+                    </span>
+                    <h3>2. Apoio Domiciliar e Familiar</h3>
+                    <p>Suporte para quem tem limitações leves ou moderadas.</p>
+                    <ul>
+                        <li>Atenção primária fortalecida</li>
+                        <li>Visitas domiciliares (SAD)</li>
+                        <li>Apoio ao cuidador familiar</li>
+                        <li>Telemonitoramento</li>
+                        <li>Adaptação da moradia</li>
+                    </ul>
+                </article>
+
+                <!-- 3 -->
+                <article class="axis">
+                    <span class="round-icon orange">
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 6a3 3 0 0 1 0 6"/><path d="M18 14a6 6 0 0 1 3 5"/>
+                        </svg>
+                    </span>
+                    <h3>3. Serviços Comunitários e Intermediários</h3>
+                    <p>Alternativas entre o domicílio e a institucionalização.</p>
+                    <ul>
+                        <li>Centros-dia</li>
+                        <li>Grupos de apoio</li>
+                        <li>Transporte adaptado</li>
+                        <li>Serviços de reabilitação</li>
+                        <li>Moradia assistida</li>
+                    </ul>
+                </article>
+
+                <!-- 4 -->
+                <article class="axis">
+                    <span class="round-icon red">
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 9a4.5 4.5 0 0 0-8-2.8A4.5 4.5 0 0 0 4 9c0 4.2 5.3 7.9 8 9.7 1.5-1 4-2.6 6-4.8"/><path d="M2.5 12.5h3l1.5-3 2 5 1.5-2h3"/>
+                        </svg>
+                    </span>
+                    <h3>4. Cuidado de Longa Duração</h3>
+                    <p>Para idosos com alta dependência e vulnerabilidade.</p>
+                    <ul>
+                        <li>Ampliação de ILPIs públicas</li>
+                        <li>Cuidadores profissionais</li>
+                        <li>Equipes multiprofissionais</li>
+                        <li>Cuidados paliativos</li>
+                        <li>Integração saúde-assistência</li>
+                    </ul>
+                </article>
+
+                <!-- 5 -->
+                <article class="axis">
+                    <span class="round-icon purple">
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 20.5V5.5l8-3 8 3v15"/><path d="M2.5 20.5h19"/><path d="M8.5 9h2M13.5 9h2M8.5 13h2M13.5 13h2"/><path d="M10 20.5v-4h4v4"/>
+                        </svg>
+                    </span>
+                    <h3>5. Cidade Amiga do Idoso</h3>
+                    <p>Ambiente urbano seguro, acessível e inclusivo.</p>
+                    <ul>
+                        <li>Mobilidade urbana acessível</li>
+                        <li>Calçadas e espaços públicos adaptados</li>
+                        <li>Habitação adequada</li>
+                        <li>Segurança e iluminação</li>
+                        <li>Participação social</li>
+                    </ul>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== Impacto + Como o TechCare apoia ===== -->
+        <div class="two-cols lower">
+
+            <section class="panel">
+                <h2>Impacto esperado</h2>
+                <p>Resultados de uma estratégia integrada e sustentável.</p>
+
+                <div class="impact-grid">
+                    <div>
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.3l2.6 2.6 4.8-5.4"/></svg>
+                        <b>Mais autonomia</b>
+                        <small>para uma Campinas preparada</small>
+                    </div>
+                    <div>
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.3l2.6 2.6 4.8-5.4"/></svg>
+                        <b>Menor sobrecarga</b>
+                        <small>para uma Campinas preparada</small>
+                    </div>
+                    <div>
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.3l2.6 2.6 4.8-5.4"/></svg>
+                        <b>Uso mais eficiente</b>
+                        <small>para uma Campinas preparada</small>
+                    </div>
+                    <div>
+                        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.3l2.6 2.6 4.8-5.4"/></svg>
+                        <b>Cidade mais inclusiva</b>
+                        <small>para uma Campinas preparada</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Como o TechCare apoia</h2>
+                <p>Dados, projeções e cenários para orientar o planejamento das soluções.</p>
+
+                <div class="support">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20.5V4"/><path d="M4 20.5h16.5"/><rect x="7.5" y="12" width="3" height="6" rx="1"/><rect x="13" y="8" width="3" height="10" rx="1"/><rect x="18" y="4.5" width="3" height="13.5" rx="1"/></svg>
+                    <span>Identifica a demanda</span>
+
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 16.5 9 11l3.5 3.5L20.5 6.5"/><path d="M15.5 6.5h5v5"/><path d="M3.5 20.5h17"/></svg>
+                    <span>Simula cenários</span>
+
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>
+                    <span>Apoia a decisão</span>
+                </div>
+            </section>
+
+        </div>
 
     </main>
 
     <script src="/frontend/js/app.js"></script>
+
+    <!-- Comportamentos só desta página -->
+    <script>
+        // Realce das abas de ano (nesta tela é só visual, não muda dados)
+        document.querySelectorAll(".years button").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                document.querySelectorAll(".years button").forEach(function (b) {
+                    b.classList.remove("selected");
+                });
+                btn.classList.add("selected");
+            });
+        });
+
+        // Marca "Soluções Públicas" como item ativo na sidebar
+        // (a sidebar é injetada pelo app.js, então esperamos ela carregar)
+        window.addEventListener("load", function () {
+            var tentar = setInterval(function () {
+                var link = document.querySelector('.sidebar a[href*="solucoes-publicas"]');
+                if (link) {
+                    link.classList.add("active");
+                    clearInterval(tentar);
+                }
+            }, 50);
+            setTimeout(function () { clearInterval(tentar); }, 3000);
+        });
+    </script>
 
 </body>
 
