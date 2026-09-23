@@ -48,6 +48,17 @@ Front-end
 - [x] 10 - Conteúdo da tela Soluções Públicas: os cinco eixos (prevenção, apoio domiciliar,
       serviços comunitários, cuidado de longa duração, cidade amiga do idoso)
       Responsável: Gustavo Henrique
+Banco
+- [X] 17 - Etapa 3: tratar os setores censitários
+      Responsável: Gustavi Pagani
+
+### Revisão
+
+- [ ] 10 - Conteúdo da tela Soluções Públicas: os cinco eixos (prevenção, apoio domiciliar,
+      serviços comunitários, cuidado de longa duração, cidade amiga do idoso)
+      Responsável: Gustavo Henrique
+- [ ] 16 - Etapa 2: tratar o mapa das APGs
+      Responsável: Leonardo
 
 ### Em andamento
 
@@ -55,12 +66,9 @@ Front-end
       Responsável: Grupo
 - [ ] 15 - Etapa 1: extrair os 3 PDFs (CMI, PMAS e PMS)
       Responsável: Gustavo Henrique
-- [ ] 16 - Etapa 2: tratar o mapa das APGs
-      Responsável: Leonardo
 
-### Revisão
-
-(vazio)
+- [ ] 18 - Etapa 4: relacionar setor censitário -> APG
+      Responsável: Gustavo Pagani
 
 ### A fazer - P0
 
@@ -80,10 +88,7 @@ Front-end
 Dados - 13 etapas, nesta ordem. As etapas 1 e 2 já estão em andamento (ver acima).
 O banco só começa depois da etapa 13.
 
-- [ ] 17 - Etapa 3: tratar os setores censitários
-      Responsável:
-- [ ] 18 - Etapa 4: relacionar setor censitário -> APG
-      Responsável:
+
 - [ ] 19 - Etapa 5: tratar dados demográficos do Censo 2022
       Responsável:
 - [ ] 20 - Etapa 6: tratar dados do SEADE
