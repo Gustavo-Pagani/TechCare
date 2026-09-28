@@ -49,6 +49,12 @@ Front-end
       serviços comunitários, cuidado de longa duração, cidade amiga do idoso)
       Responsável: Gustavo Henrique
 Banco
+- [X] 15 - Etapa 1: extrair os 3 PDFs (CMI, PMAS e PMS)
+      Responsável: Gustavo Pagani
+
+- [X] 16 - Etapa 2: tratar o mapa das APGs
+      Responsável: Leonardo
+
 - [X] 17 - Etapa 3: tratar os setores censitários
       Responsável: Gustavi Pagani
 
@@ -57,18 +63,24 @@ Banco
 - [ ] 10 - Conteúdo da tela Soluções Públicas: os cinco eixos (prevenção, apoio domiciliar,
       serviços comunitários, cuidado de longa duração, cidade amiga do idoso)
       Responsável: Gustavo Henrique
-- [ ] 16 - Etapa 2: tratar o mapa das APGs
-      Responsável: Leonardo
+
 
 ### Em andamento
 
 - [ ] 08 - Documento da 2a entrega: protótipo, backlog, kanban, evidências
       Responsável: Grupo
-- [ ] 15 - Etapa 1: extrair os 3 PDFs (CMI, PMAS e PMS)
-      Responsável: Gustavo Henrique
 
 - [ ] 18 - Etapa 4: relacionar setor censitário -> APG
       Responsável: Gustavo Pagani
+
+- [ ] 19 - Etapa 5: tratar dados demográficos do Censo 2022
+      Responsável: Leonardo
+
+- [ ] 20 - Etapa 6: tratar dados do SEADE
+      Responsável: André
+
+- [ ] 23 - Etapa 9: tratar os CSVs gerados dos PDFs
+      Responsável: Gustavo Henrique
 
 ### A fazer - P0
 
@@ -89,16 +101,12 @@ Dados - 13 etapas, nesta ordem. As etapas 1 e 2 já estão em andamento (ver aci
 O banco só começa depois da etapa 13.
 
 
-- [ ] 19 - Etapa 5: tratar dados demográficos do Censo 2022
-      Responsável:
-- [ ] 20 - Etapa 6: tratar dados do SEADE
-      Responsável:
+
 - [ ] 21 - Etapa 7: tratar a PNS 2019
       Responsável:
 - [ ] 22 - Etapa 8: tratar microdados de renda do Censo 2022
       Responsável:
-- [ ] 23 - Etapa 9: tratar os CSVs gerados dos PDFs
-      Responsável:
+
 - [ ] 24 - Etapa 10: integrar todas as bases
       Responsável:
 - [ ] 25 - Etapa 11: calcular os indicadores do TechCare
