@@ -117,28 +117,14 @@ body {
     display: block;
 }
 
+/* Ícones redondos (Objetivo e eixos).
+   A cor e o círculo já vêm dentro da imagem PNG. */
 .round-icon {
     width: 76px;
     height: 76px;
     flex: none;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    font-size: 35px;
-    color: #fff;
+    display: block;
 }
-
-.round-icon .ico {
-    width: .86em;
-    height: .86em;
-}
-
-.round-icon.mint   { background: #d2f6ee; color: #049b8d; }
-.round-icon.green  { background: linear-gradient(135deg, #13884c, #4dc779); }
-.round-icon.sky    { background: linear-gradient(135deg, #0757bc, #40b9e7); }
-.round-icon.orange { background: linear-gradient(135deg, #f1a315, #ffbb28); }
-.round-icon.red    { background: linear-gradient(135deg, #e82c35, #f55d62); }
-.round-icon.purple { background: linear-gradient(135deg, #6238bc, #925ee5); }
 
 
 /* =========================
@@ -242,7 +228,6 @@ body {
 .axis .round-icon {
     width: 60px;
     height: 60px;
-    font-size: 27px;
 }
 
 .axis h3 {
