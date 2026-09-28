@@ -44,6 +44,8 @@ O que entra:
       Responsável: Leonardo
 - [X] 07 - CSS geral e identidade visual: cores, tipografia, cards, item ativo da sidebar
       Responsável: Grupo
+- [x] 08 - Documento da 2a entrega: protótipo, backlog, kanban, evidências
+      Responsável: Grupo
 Front-end
 - [x] 10 - Conteúdo da tela Soluções Públicas: os cinco eixos (prevenção, apoio domiciliar,
       serviços comunitários, cuidado de longa duração, cidade amiga do idoso)
@@ -58,20 +60,14 @@ Banco
 - [X] 17 - Etapa 3: tratar os setores censitários
       Responsável: Gustavi Pagani
 
+- [x] 18 - Etapa 4: relacionar setor censitário -> APG
+      Responsável: Gustavo Pagani
+
 ### Revisão
 
-- [ ] 10 - Conteúdo da tela Soluções Públicas: os cinco eixos (prevenção, apoio domiciliar,
-      serviços comunitários, cuidado de longa duração, cidade amiga do idoso)
-      Responsável: Gustavo Henrique
 
 
 ### Em andamento
-
-- [ ] 08 - Documento da 2a entrega: protótipo, backlog, kanban, evidências
-      Responsável: Grupo
-
-- [ ] 18 - Etapa 4: relacionar setor censitário -> APG
-      Responsável: Gustavo Pagani
 
 - [ ] 19 - Etapa 5: tratar dados demográficos do Censo 2022
       Responsável: Leonardo
@@ -82,6 +78,9 @@ Banco
 - [ ] 23 - Etapa 9: tratar os CSVs gerados dos PDFs
       Responsável: Gustavo Henrique
 
+- [ ] 21 - Etapa 7: tratar a PNS 2019
+      Responsável: Gustavo Pagani
+      
 ### A fazer - P0
 
 Front-end
