@@ -69,6 +69,9 @@ O que entra:
 - [x] 20 - Etapa 6: tratar dados do SEADE
       Responsável: André
 
+- [X] 21 - Etapa 7: tratar a PNS 2019
+      Responsável: Gustavo Pagani
+
 - [X] 23 - Etapa 9: tratar os CSVs gerados dos PDFs
       Responsável: Gustavo Henrique
 ### Revisão
