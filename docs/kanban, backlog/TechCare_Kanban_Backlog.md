@@ -72,16 +72,14 @@ O que entra:
 - [X] 21 - Etapa 7: tratar a PNS 2019
       Responsável: Gustavo Pagani
 
+
+
 - [X] 23 - Etapa 9: tratar os CSVs gerados dos PDFs
       Responsável: Gustavo Henrique
 ### Revisão
 
 
 ### Em andamento
-
-
-- [ ] 21 - Etapa 7: tratar a PNS 2019
-      Responsável: Gustavo Pagani
 
 - [] 22 - Etapa 8: tratar microdados de renda do Censo 2022
       Responsável: Gustavo Henrique
