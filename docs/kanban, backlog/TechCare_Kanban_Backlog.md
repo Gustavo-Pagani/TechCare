@@ -77,6 +77,10 @@ O que entra:
 
 - [X] 23 - Etapa 9: tratar os CSVs gerados dos PDFs
       Responsável: Gustavo Henrique
+
+- [x] 24 - Etapa 10: integrar todas as bases
+      Responsável: Gustavo Pagani
+
 ### Revisão
 
 
@@ -100,10 +104,6 @@ Front-end
 
 Dados - 13 etapas, nesta ordem. As etapas 1 e 2 já estão em andamento (ver acima).
 O banco só começa depois da etapa 13.
-
-
-- [ ] 24 - Etapa 10: integrar todas as bases
-      Responsável:
 
 - [ ] 25 - Etapa 11: calcular os indicadores do TechCare
       Responsável:
