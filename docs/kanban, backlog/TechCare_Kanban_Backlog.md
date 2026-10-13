@@ -81,12 +81,14 @@ O que entra:
 - [x] 24 - Etapa 10: integrar todas as bases
       Responsável: Gustavo Pagani
 
-- [ ] 25 - Etapa 11: calcular os indicadores do TechCare
+- [x] 25 - Etapa 11: calcular os indicadores do TechCare
       Responsável: Gustavo Pagani/andré
 
-- [ ] 26 - Etapa 12: validar todos os dados e cálculos
-      Responsável: André
+- [x] 26 - Etapa 12: gerar os arquivos finais para o database
+      Responsável: Gustavo Pagani/ Gustavo Henrique
 
+- [ ] 28 - Criar banco PostgreSQL/PostGIS a partir do DER e carregar os arquivos da etapa 13
+      Responsável: Andre
 ### Revisão
 
 
@@ -111,13 +113,9 @@ Front-end
 Dados - 13 etapas, nesta ordem. As etapas 1 e 2 já estão em andamento (ver acima).
 O banco só começa depois da etapa 13.
 
-- [ ] 27 - Etapa 13: gerar os arquivos finais para o database
-      Responsável:
 
 Banco e API
 
-- [ ] 28 - Criar banco PostgreSQL/PostGIS a partir do DER e carregar os arquivos da etapa 13
-      Responsável:
 - [ ] 29 - API FastAPI com endpoints de indicadores gerais e por APG
       Responsável:
 
