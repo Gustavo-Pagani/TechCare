@@ -81,6 +81,12 @@ O que entra:
 - [x] 24 - Etapa 10: integrar todas as bases
       Responsável: Gustavo Pagani
 
+- [ ] 25 - Etapa 11: calcular os indicadores do TechCare
+      Responsável: Gustavo Pagani/andré
+
+- [ ] 26 - Etapa 12: validar todos os dados e cálculos
+      Responsável: André
+
 ### Revisão
 
 
@@ -105,10 +111,6 @@ Front-end
 Dados - 13 etapas, nesta ordem. As etapas 1 e 2 já estão em andamento (ver acima).
 O banco só começa depois da etapa 13.
 
-- [ ] 25 - Etapa 11: calcular os indicadores do TechCare
-      Responsável:
-- [ ] 26 - Etapa 12: validar todos os dados e cálculos
-      Responsável:
 - [ ] 27 - Etapa 13: gerar os arquivos finais para o database
       Responsável:
 
