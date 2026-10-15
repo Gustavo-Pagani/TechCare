@@ -1,0 +1,520 @@
+
+/* =========================================================
+   TECHCARE - METODOLOGIA
+   Padrão visual da página Soluções Públicas.
+   A estrutura do menu continua em sidebar.css.
+========================================================= */
+
+
+/* =========================
+   1. ESTRUTURA GERAL
+========================= */
+
+.pagina-metodologia {
+    --met-azul: #0d2a5d;
+    --met-texto: #667b9c;
+    --met-borda: #dce8ef;
+    --met-verde: #099da0;
+    --met-sombra: 0 11px 24px #1c496514;
+
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 12px 22px 12px;
+
+    font-family: "Manrope", Arial, sans-serif;
+    color: var(--met-azul);
+    background: radial-gradient(
+        circle at 65% 0,
+        #fff 0,
+        #edf6f9 55%
+    );
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-rows: auto auto auto minmax(310px, 1fr);
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "apresentacao apresentacao"
+        "processamento processamento"
+        "indicadores fontes";
+
+    gap: 12px 14px;
+    align-content: start;
+}
+
+.pagina-metodologia > header,
+.pagina-metodologia > section {
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.pagina-metodologia h1,
+.pagina-metodologia h2,
+.pagina-metodologia h3 {
+    color: var(--met-azul);
+}
+
+.pagina-metodologia .cabecalho-secao {
+    margin-bottom: 12px;
+}
+
+.pagina-metodologia .cabecalho-secao h2 {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.25;
+}
+
+.pagina-metodologia .cabecalho-secao p {
+    margin: 4px 0 0;
+    color: var(--met-texto);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   2. CABEÇALHO E APRESENTAÇÃO
+========================= */
+
+.cabecalho-metodologia {
+    grid-area: cabecalho;
+}
+
+.identificacao-territorio {
+    margin: 0;
+    color: #078c96;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .09em;
+}
+
+.titulo-metodologia {
+    margin: 3px 0;
+    font-size: 33px;
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+
+.descricao-metodologia {
+    margin: 4px 0 0;
+    color: var(--met-texto);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.apresentacao-metodologia {
+    grid-area: apresentacao;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: center;
+    gap: 18px;
+
+    padding: 15px 18px;
+    background: linear-gradient(90deg, #edfffa, #fff);
+    border: 1px solid #d9eeee;
+    border-radius: 9px;
+}
+
+.apresentacao-conteudo h2 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.apresentacao-conteudo p {
+    margin: 6px 0;
+    color: #597498;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.apresentacao-foco {
+    padding: 13px 14px;
+    background: #edf6ff;
+    border: 1px solid #e0ebf7;
+    border-radius: 8px;
+}
+
+.apresentacao-foco h3 {
+    margin: 0 0 8px;
+    color: #0860c9;
+    font-size: 15px;
+}
+
+.apresentacao-foco ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #0860c9;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.apresentacao-foco li::marker {
+    color: var(--met-verde);
+}
+
+/* =========================
+   3. PROCESSAMENTO DOS DADOS
+========================= */
+
+.secao-processamento {
+    grid-area: processamento;
+    padding: 18px 20px 22px;
+    background: #fff;
+    border: 1px solid #e0ebf1;
+    border-radius: 9px;
+    box-shadow: var(--met-sombra);
+}
+
+.lista-etapas-processamento {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.etapa-processamento {
+    position: relative;
+    text-align: center;
+}
+
+.numero-etapa {
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+/* seta entre etapas */
+.etapa-processamento:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 16px;
+    right: -18px;
+    color: #8eb1c6;
+    font-size: 24px;
+}
+
+/* título de cada etapa */
+.etapa-processamento h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: #0b2859;
+}
+
+/* texto de cada etapa */
+.etapa-processamento p {
+    margin: 0;
+    color: #607899;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+/* cores de cada número */
+.etapa-processamento:nth-child(1) .numero-etapa {
+    background: #e4f7f4;
+    border: 1px solid #bce8e3;
+    color: #078c96;
+}
+
+.etapa-processamento:nth-child(2) .numero-etapa {
+    background: #eaf1fd;
+    border: 1px solid #cfdcf8;
+    color: #1d63d1;
+}
+
+.etapa-processamento:nth-child(3) .numero-etapa {
+    background: #fff4e5;
+    border: 1px solid #f4d59d;
+    color: #e38b07;
+}
+
+.etapa-processamento:nth-child(4) .numero-etapa {
+    background: #f2ecff;
+    border: 1px solid #dac8ff;
+    color: #7a4dd8;
+}
+
+.etapa-processamento:nth-child(5) .numero-etapa {
+    background: #e8f8f6;
+    border: 1px solid #bfe9e3;
+    color: #0a8b8d;
+}
+/* =========================
+   4. INDICADORES TERRITORIAIS
+========================= */
+
+.secao-indicadores {
+    grid-area: indicadores;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 13px 14px;
+    background: #fff;
+    border: 1px solid #e0ebf1;
+    border-radius: 9px;
+    box-shadow: var(--met-sombra);
+}
+
+.grade-indicadores {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.cartao-indicador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 10px 8px;
+
+    text-align: center;
+    background: #fbfdfe;
+    border: 1px solid #e5edf2;
+    border-radius: 8px;
+}
+
+.categoria-indicador {
+    margin-bottom: 10px;
+    padding: 4px 10px;
+
+    border-radius: 20px;
+    background: #e5f6f3;
+
+    color: #078c96;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.circulo-indicador {
+    display: grid;
+    place-items: center;
+
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 8px solid #099da0;
+    border-radius: 50%;
+}
+
+.cartao-indicador:nth-child(2) .circulo-indicador {
+    border-color: #298dda;
+}
+
+.cartao-indicador:nth-child(3) .circulo-indicador {
+    border-color: #f4ab36;
+}
+
+.cartao-indicador:nth-child(4) .circulo-indicador {
+    border-color: #8f6bd1;
+}
+
+.valor-indicador {
+    color: #0b2859;
+    font-size: 22px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+#indicador-renda-responsavel {
+    font-size: 15px;
+}
+
+.cartao-indicador h3 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.cartao-indicador p {
+    margin: 0;
+    color: #607899;
+    font-size: 11.5px;
+    line-height: 1.4;
+}
+
+.referencia-indicadores {
+    margin: 10px 0 0;
+    padding: 9px 11px;
+
+    border: 1px solid #dceafa;
+    border-radius: 7px;
+    background: #eef7ff;
+
+    color: #3b6b92;
+    font-size: 11.5px;
+    line-height: 1.45;
+}
+
+
+/* =========================
+   5. FONTES DOS DADOS
+========================= */
+
+.secao-fontes {
+    grid-area: fontes;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 13px 14px;
+    background: #fff;
+    border: 1px solid #e0ebf1;
+    border-radius: 9px;
+    box-shadow: var(--met-sombra);
+}
+
+.lista-fontes {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-fonte {
+    position: relative;
+    padding: 2px 0 2px 14px;
+    border-bottom: 1px solid #e7edf0;
+}
+
+.item-fonte:last-child {
+    border-bottom: none;
+}
+
+.item-fonte::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 13px;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--met-verde);
+    border-radius: 50%;
+}
+
+.item-fonte h3 {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.item-fonte p {
+    margin: 2px 0 0;
+    color: #607899;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   6. ITEM ATIVO DO MENU
+========================= */
+
+#sidebar .sidebar nav a[href$="metodologia.html"] {
+    display: block;
+    padding: 10px 12px;
+    box-sizing: border-box;
+
+    border-radius: 8px;
+    color: #fff;
+    background: linear-gradient(
+        135deg,
+        #0aa0a6,
+        #0ab9b1
+    );
+}
+
+
+/* =========================
+   7. RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1350px) {
+
+    .pagina-metodologia {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "cabecalho"
+            "apresentacao"
+            "processamento"
+            "indicadores"
+            "fontes";
+    }
+
+    .lista-fontes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 20px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .apresentacao-metodologia {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-etapas-processamento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .etapa-processamento::after {
+        display: none;
+    }
+
+    .grade-indicadores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+
+    .pagina-metodologia {
+        padding: 14px;
+    }
+
+    .titulo-metodologia {
+        font-size: 28px;
+    }
+
+    .descricao-metodologia {
+        font-size: 14px;
+    }
+
+    .lista-etapas-processamento,
+    .lista-fontes {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-indicadores {
+        grid-template-columns: 1fr 1fr;
+    }
+}
