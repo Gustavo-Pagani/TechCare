@@ -214,32 +214,7 @@
     </main>
 
     <script src="/frontend/js/app.js"></script>
-
-    <!-- Comportamentos só desta página -->
-    <script>
-        // Realce das abas de ano (nesta tela é só visual, não muda dados)
-        document.querySelectorAll(".years button").forEach(function (btn) {
-            btn.addEventListener("click", function () {
-                document.querySelectorAll(".years button").forEach(function (b) {
-                    b.classList.remove("selected");
-                });
-                btn.classList.add("selected");
-            });
-        });
-
-        // Marca "Soluções Públicas" como item ativo na sidebar
-        // (a sidebar é injetada pelo app.js, então esperamos ela carregar)
-        window.addEventListener("load", function () {
-            var tentar = setInterval(function () {
-                var link = document.querySelector('.sidebar a[href*="solucoes-publicas"]');
-                if (link) {
-                    link.classList.add("active");
-                    clearInterval(tentar);
-                }
-            }, 50);
-            setTimeout(function () { clearInterval(tentar); }, 3000);
-        });
-    </script>
+    <script src="/frontend/js/solucoes-publicas.js"></script>
 
 </body>
 
