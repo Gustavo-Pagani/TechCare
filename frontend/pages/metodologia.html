@@ -1,5 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ==================================================
+     ÁREA 1: CONFIGURAÇÕES DO DOCUMENTO HTML
+================================================== -->
 
 <head>
 
@@ -12,25 +17,35 @@
 
     <title>Metodologia | TechCare</title>
 
-    <! css global e menu lateral >
     <link
         rel="stylesheet"
-        href="/frontend/css/sidebar.css" 
+        href="/frontend/css/sidebar.css"
     >
 
 </head>
 
+
 <body>
+
+    <!-- ==================================================
+         ÁREA 2: MENU LATERAL E ESTRUTURA PRINCIPAL
+    ================================================== -->
 
     <div id="sidebar"></div>
 
-    <main cass="pagina-metodologia">
+    <main class="pagina-metodologia">
+
+
+        <!-- ==================================================
+             ÁREA 3: APRESENTAÇÃO DA METODOLOGIA
+        ================================================== -->
+
         <header class="cabecalho-metodologia">
             <p class="identificacao-territorio">
                 PLANEJAMENTO PÚBLICO . CAMPINAS, SP
             </p>
 
-            <h1 class=""titulo-metodologia">
+            <h1 class="titulo-metodologia">
             Metodologia
         </h1>
 
@@ -42,11 +57,9 @@
          </p>
 
         </header>
-        
-        <!-- APRESENTAÇÃO DA METODOLOGIA -->
+
         <section class="apresentacao-metodologia">
 
-            <!-- Explicação principal -->
             <div class="apresentacao-conteudo">
 
                 <h2>Como construímos os indicadores</h2>
@@ -68,7 +81,6 @@
 
             </div>
 
-            <!-- Princípios da metodologia -->
             <aside class="apresentacao-foco">
 
                 <h3>Foco da metodologia</h3>
@@ -91,6 +103,313 @@
 
         </section>
 
+
+        <!-- ==================================================
+             ÁREA 4: ETAPAS DE PROCESSAMENTO DOS DADOS
+        ================================================== -->
+
+        <section class="secao-processamento">
+
+            <header class="cabecalho-secao">
+
+                <h2>Etapas de processamento dos dados</h2>
+
+                <p>
+                    Da coleta das fontes oficiais à apresentação
+                    de informações para o planejamento público.
+                </p>
+
+            </header>
+
+            <ol class="lista-etapas-processamento">
+
+                <li class="etapa-processamento">
+
+                    <span class="numero-etapa" aria-hidden="true">01</span>
+
+                    <h3>Coleta</h3>
+
+                    <p>
+                        Obtenção de dados do IBGE, Fundação Seade,
+                        Prefeitura de Campinas e demais fontes
+                        utilizadas pelo TechCare.
+                    </p>
+
+                </li>
+
+                <li class="etapa-processamento">
+
+                    <span class="numero-etapa" aria-hidden="true">02</span>
+
+                    <h3>Tratamento</h3>
+
+                    <p>
+                        Limpeza, padronização e validação dos dados,
+                        preservando os valores não publicados.
+                    </p>
+
+                </li>
+
+                <li class="etapa-processamento">
+
+                    <span class="numero-etapa" aria-hidden="true">03</span>
+
+                    <h3>Integração territorial</h3>
+
+                    <p>
+                        Organização dos dados censitários em
+                        setores e nas 17 APGs de Campinas.
+                    </p>
+
+                </li>
+
+                <li class="etapa-processamento">
+
+                    <span class="numero-etapa" aria-hidden="true">04</span>
+
+                    <h3>Indicadores</h3>
+
+                    <p>
+                        Cálculo de indicadores territoriais
+                        e estimativas, com identificação
+                        das fontes e limitações.
+                    </p>
+
+                </li>
+
+                <li class="etapa-processamento">
+
+                    <span class="numero-etapa" aria-hidden="true">05</span>
+
+                    <h3>Visualização</h3>
+
+                    <p>
+                        Apresentação das informações em mapas,
+                        gráficos e painéis para apoiar
+                        o planejamento público.
+                    </p>
+
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- ==================================================
+             ÁREA 5: QUATRO INDICADORES TERRITORIAIS
+        ================================================== -->
+
+        <section class="secao-indicadores">
+
+            <header class="cabecalho-secao">
+
+                <h2>
+                    Quatro lentes territoriais para entender
+                    o envelhecimento em Campinas
+                </h2>
+
+                <p>
+                    Indicadores complementares que revelam
+                    diferentes características do território.
+                </p>
+
+            </header>
+
+            <div class="grade-indicadores">
+
+                <article class="cartao-indicador">
+
+                    <span class="categoria-indicador">
+                        Hoje
+                    </span>
+
+                    <div class="circulo-indicador">
+
+                        <span
+                            class="valor-indicador"
+                            id="indicador-populacao-idosa"
+                            aria-live="polite"
+                        >--</span>
+
+                    </div>
+
+                    <h3>População 60+</h3>
+
+                    <p>
+                        Percentual de moradores com
+                        60 anos ou mais.
+                    </p>
+
+                </article>
+
+
+                <article class="cartao-indicador">
+
+                    <span class="categoria-indicador">
+                        Hoje
+                    </span>
+
+                    <div class="circulo-indicador">
+
+                        <span
+                            class="valor-indicador"
+                            id="indicador-populacao-70"
+                            aria-live="polite"
+                        >--</span>
+
+                    </div>
+
+                    <h3>70+ entre os idosos</h3>
+
+                    <p>
+                        Percentual de pessoas com 70 anos
+                        ou mais entre a população 60+.
+                    </p>
+
+                </article>
+
+
+                <article class="cartao-indicador">
+
+                    <span class="categoria-indicador">
+                        Próximos anos
+                    </span>
+
+                    <div class="circulo-indicador">
+
+                        <span
+                            class="valor-indicador"
+                            id="indicador-geracao-chegando"
+                            aria-live="polite"
+                        >--</span>
+
+                    </div>
+
+                    <h3>Geração chegando</h3>
+
+                    <p>
+                        Pessoas de 50 a 59 anos para
+                        cada 100 idosos.
+                    </p>
+
+                </article>
+
+
+                <article class="cartao-indicador">
+
+                    <span class="categoria-indicador">
+                        Contexto
+                    </span>
+
+                    <div class="circulo-indicador">
+
+                        <span
+                            class="valor-indicador"
+                            id="indicador-renda-responsavel"
+                            aria-live="polite"
+                        >--</span>
+
+                    </div>
+
+                    <h3>Renda média do responsável</h3>
+
+                    <p>
+                        Renda média dos responsáveis
+                        pelos domicílios, em reais.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p class="referencia-indicadores">
+                Referência: Censo Demográfico 2022, IBGE.
+                Indicadores calculados pelo TechCare
+                a partir dos dados publicados.
+            </p>
+
+        </section>
+
+
+        <!-- ==================================================
+             ÁREA 6: FONTES DOS DADOS
+        ================================================== -->
+
+        <section class="secao-fontes">
+
+            <header class="cabecalho-secao">
+
+                <h2>Fontes dos dados</h2>
+
+                <p>
+                    Principais fontes utilizadas na
+                    construção da plataforma.
+                </p>
+
+            </header>
+
+            <ul class="lista-fontes">
+
+                <li class="item-fonte">
+                    <h3>IBGE - Censo 2022</h3>
+                    <p>
+                        População, idade, renda
+                        e setores censitários.
+                    </p>
+                </li>
+
+                <li class="item-fonte">
+                    <h3>Fundação Seade</h3>
+                    <p>
+                        Projeções populacionais
+                        municipais.
+                    </p>
+                </li>
+
+                <li class="item-fonte">
+                    <h3>Prefeitura de Campinas</h3>
+                    <p>
+                        Limites territoriais
+                        das 17 APGs.
+                    </p>
+                </li>
+
+                <li class="item-fonte">
+                    <h3>Conselho Municipal do Idoso</h3>
+                    <p>
+                        Registros de entidades
+                        e serviços.
+                    </p>
+                </li>
+
+                <li class="item-fonte">
+                    <h3>PMAS</h3>
+                    <p>
+                        Plano Municipal de
+                        Assistência Social.
+                    </p>
+                </li>
+
+                <li class="item-fonte">
+                    <h3>PMS</h3>
+                    <p>
+                        Plano Municipal de Saúde.
+                    </p>
+                </li>
+
+                <li class="item-fonte">
+                    <h3>IBGE - PNS 2019</h3>
+                    <p>
+                        Pesquisa Nacional de Saúde.
+                        Parâmetros dos perfis
+                        de cuidado.
+                    </p>
+                </li>
+
+            </ul>
+
+        </section>
 
     </main>
 
