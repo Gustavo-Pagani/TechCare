@@ -80,6 +80,7 @@ def resumo_municipal():
     # Devolve os resultados em JSON
     return {
         "dados": {
+            "populacao_60_mais_publicada": int(idosos),
             "percentual_60_mais": round(percentual_idosos, 1),
             "percentual_70_entre_idosos": round(percentual_70, 1),
             "geracao_chegando": round(geracao_chegando),

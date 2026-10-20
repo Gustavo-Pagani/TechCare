@@ -3,6 +3,14 @@
 ========================= */
 
 /* Define tamanho, cor e estrutura principal da barra lateral */
+/* Reserva o espaço do menu e o mantém fixo durante a rolagem */
+#sidebar {
+    flex: 0 0 293px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start;
+}
 .sidebar {
     width: 293px;
     height: 100vh;

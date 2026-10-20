@@ -1,0 +1,426 @@
+/* =========================================================
+   TECHCARE - RAZÃO DO PROJETO
+   Padrão visual do protótipo e das páginas Metodologia
+   e Soluções Públicas. O menu continua em sidebar.css.
+========================================================= */
+
+
+/* =========================
+   1. ESTRUTURA GERAL
+========================= */
+
+.pagina-razao-projeto {
+    --raz-azul: #0b2859;
+    --raz-texto: #667b9c;
+    --raz-borda: #dce8ef;
+    --raz-verde: #099aa1;
+    --raz-sombra: 0 11px 24px #1c496514;
+
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 28px 32px;
+
+    font-family: "Manrope", Arial, sans-serif;
+    color: var(--raz-azul);
+    background: radial-gradient(circle at 65% 0, #fff 0, #edf6f9 55%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pagina-razao-projeto h1,
+.pagina-razao-projeto h2,
+.pagina-razao-projeto h3 {
+    color: var(--raz-azul);
+}
+
+/* Título e subtítulo de cada bloco */
+.pagina-razao-projeto .cabecalho-secao {
+    margin-bottom: 14px;
+}
+
+.pagina-razao-projeto .cabecalho-secao h2 {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.25;
+    letter-spacing: -.5px;
+}
+
+.pagina-razao-projeto .cabecalho-secao p {
+    margin: 4px 0 0;
+    color: var(--raz-texto);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* Ícones em SVG (sem emojis): herdam a cor do círculo */
+.pagina-razao-projeto .icone {
+    display: block;
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Visual de "cartão branco" usado nos blocos */
+.secao-grafico,
+.secao-urgencia,
+.secao-oportunidade {
+    background: #fff;
+    border: 1px solid #e0ebf1;
+    border-radius: 9px;
+    box-shadow: var(--raz-sombra);
+    padding: 20px;
+    min-width: 0;
+}
+
+
+/* =========================
+   2. CABEÇALHO E ANOS
+========================= */
+
+.cabecalho-razao-projeto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.identificacao-territorio {
+    margin: 0;
+    color: #078c96;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.titulo-razao-projeto {
+    margin: 4px 0 0;
+    max-width: 720px;
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.descricao-razao-projeto {
+    margin: 6px 0 0;
+    color: var(--raz-texto);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.seletor-anos {
+    display: flex;
+    flex: none;
+    overflow: hidden;
+    border: 1px solid var(--raz-borda);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.botao-ano {
+    padding: 10px 18px;
+    border: 0;
+    border-right: 1px solid var(--raz-borda);
+    background: #fff;
+    color: #122a54;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.botao-ano:last-child {
+    border-right: 0;
+}
+
+.botao-ano:hover {
+    background: #f0f9f9;
+}
+
+.botao-ano.selecionado {
+    background: var(--raz-verde);
+    color: #fff;
+}
+
+.botao-ano:focus-visible {
+    outline: 3px solid #16c7bb;
+    outline-offset: -3px;
+}
+
+
+/* =========================
+   3. QUATRO CARTÕES DE RESUMO
+========================= */
+
+.grade-resumo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.cartao-resumo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 18px;
+    background: #fff;
+    border: 1px solid #e0ebf1;
+    border-radius: 9px;
+    box-shadow: var(--raz-sombra);
+}
+
+/* Círculo colorido com o ícone */
+.icone-resumo {
+    flex: none;
+    width: 68px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.icone-resumo.icone-censo {
+    background: linear-gradient(135deg, #008e96, #16c7bb);
+}
+
+.icone-resumo.icone-projecao {
+    background: linear-gradient(135deg, #0757bc, #40b9e7);
+}
+
+.icone-resumo.icone-horizonte {
+    background: linear-gradient(135deg, #13884c, #4dc779);
+}
+
+.icone-resumo.icone-crescimento {
+    background: linear-gradient(135deg, #f1a315, #ffbb28);
+}
+
+.conteudo-resumo {
+    min-width: 0;
+}
+
+.conteudo-resumo h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.valor-resumo {
+    display: block;
+    margin: 2px 0;
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    font-variant-numeric: tabular-nums;
+}
+
+.conteudo-resumo p {
+    margin: 0;
+    color: var(--raz-texto);
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+
+/* =========================
+   4. GRÁFICO + POR QUE AGIR AGORA
+========================= */
+
+.grade-conteudo-central {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(320px, 1fr);
+    gap: 16px;
+    align-items: stretch;
+}
+
+/* O Chart.js precisa de um container com altura definida */
+.area-grafico {
+    position: relative;
+    height: 300px;
+}
+
+.area-grafico canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.fonte-grafico {
+    margin: 12px 0 0;
+    color: var(--raz-texto);
+    font-size: 13px;
+}
+
+.nota-grafico {
+    margin: 10px 0 0;
+    padding: 10px 12px;
+    background: #f0f8ff;
+    border: 1px solid #cee5fb;
+    border-radius: 8px;
+    color: #0757b8;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+/* Lista de motivos */
+.lista-motivos {
+    display: grid;
+    gap: 10px;
+}
+
+.cartao-motivo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    background: #f8fbfc;
+    border: 1px solid #e1ebf0;
+    border-radius: 9px;
+}
+
+.icone-motivo {
+    flex: none;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.icone-motivo.icone-crescimento,
+.icone-motivo.icone-planejamento {
+    background: #d2f6ee;
+    color: #049b8d;
+}
+
+.icone-motivo.icone-cuidado {
+    background: linear-gradient(135deg, #0757bc, #40b9e7);
+    color: #fff;
+}
+
+.cartao-motivo h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.cartao-motivo p {
+    margin: 3px 0 0;
+    color: #5e7394;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   5. DO DESAFIO À OPORTUNIDADE
+========================= */
+
+.grade-oportunidades {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+}
+
+.cartao-oportunidade {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    background: #f8fbfc;
+    border: 1px solid #e1ebf0;
+    border-radius: 9px;
+}
+
+.icone-oportunidade {
+    flex: none;
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0757bc, #40b9e7);
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+}
+
+/* O cartão do meio usa o tom verde-claro do protótipo */
+.cartao-oportunidade:nth-of-type(2) .icone-oportunidade {
+    background: #d2f6ee;
+    color: #049b8d;
+}
+
+.cartao-oportunidade h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cartao-oportunidade p {
+    margin: 3px 0 0;
+    color: #5e7394;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.seta-oportunidade {
+    color: #0b2859;
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+/* =========================
+   6. TELAS MENORES
+========================= */
+
+@media (max-width: 1250px) {
+    .grade-resumo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grade-conteudo-central {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .cabecalho-razao-projeto {
+        flex-direction: column;
+    }
+
+    .titulo-razao-projeto {
+        font-size: 30px;
+    }
+
+    .grade-oportunidades {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .seta-oportunidade {
+        justify-self: center;
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina-razao-projeto {
+        padding: 16px;
+    }
+
+    .grade-resumo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

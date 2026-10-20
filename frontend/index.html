@@ -1,29 +1,487 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+<!-- ==================================================
+     ÁREA 1: CONFIGURAÇÕES DO DOCUMENTO HTML
+================================================== -->
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Razão do Projeto | TechCare</title>
 
     <link rel="stylesheet" href="/frontend/css/sidebar.css">
+    <link rel="stylesheet" href="/frontend/css/razao-projeto.css">
 
 </head>
 
+
 <body>
+
+    <!-- ==================================================
+         ÁREA 2: MENU LATERAL E CONTEÚDO PRINCIPAL
+    ================================================== -->
 
     <div id="sidebar"></div>
 
-    <main>
+    <main class="pagina-razao-projeto">
 
-        <h1>Razão do Projeto</h1>
+
+        <!-- ==================================================
+             ÁREA 3: CABEÇALHO DA RAZÃO DO PROJETO
+        ================================================== -->
+
+        <header class="cabecalho-razao-projeto">
+
+            <div class="cabecalho-conteudo">
+
+                <p class="identificacao-territorio">
+                    PLANEJAMENTO PÚBLICO · CAMPINAS, SP
+                </p>
+
+                <h1 class="titulo-razao-projeto">
+                    Campinas está preparada para envelhecer?
+                </h1>
+
+                <p class="descricao-razao-projeto">
+                    Dados, projeções e caminhos para o
+                    planejamento público da longevidade.
+                </p>
+
+            </div>
+
+            <nav class="seletor-anos" aria-label="Anos da projeção">
+
+                <button
+                    class="botao-ano selecionado"
+                    type="button"
+                    data-ano="2025"
+                    aria-pressed="true"
+                >
+                    2025
+                </button>
+
+                <button
+                    class="botao-ano"
+                    type="button"
+                    data-ano="2030"
+                    aria-pressed="false"
+                >
+                    2030
+                </button>
+
+                <button
+                    class="botao-ano"
+                    type="button"
+                    data-ano="2040"
+                    aria-pressed="false"
+                >
+                    2040
+                </button>
+
+                <button
+                    class="botao-ano"
+                    type="button"
+                    data-ano="2050"
+                    aria-pressed="false"
+                >
+                    2050
+                </button>
+
+            </nav>
+
+        </header>
+
+
+        <!-- ==================================================
+             ÁREA 4: QUATRO INDICADORES POPULACIONAIS
+        ================================================== -->
+
+        <section class="secao-resumo" aria-label="Indicadores populacionais">
+
+            <div class="grade-resumo">
+
+                <article class="cartao-resumo">
+
+                    <span class="icone-resumo icone-censo" aria-hidden="true">
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
+
+                    <div class="conteudo-resumo">
+
+                        <h2>Campinas 60+ em 2022</h2>
+
+                        <strong
+                            class="valor-resumo"
+                            id="populacao-idosa-2022"
+                            aria-live="polite"
+                        >--</strong>
+
+                        <p>
+                            IBGE: setores com dado publicado
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="cartao-resumo">
+
+                    <span class="icone-resumo icone-projecao" aria-hidden="true">
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                    </span>
+
+                    <div class="conteudo-resumo">
+
+                        <h2>Campinas 60+ em 2030</h2>
+
+                        <strong
+                            class="valor-resumo"
+                            id="populacao-idosa-2030"
+                            aria-live="polite"
+                        >--</strong>
+
+                        <p>
+                            Projeção municipal da Seade
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="cartao-resumo">
+
+                    <span class="icone-resumo icone-horizonte" aria-hidden="true">
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    </span>
+
+                    <div class="conteudo-resumo">
+
+                        <h2>Horizonte 2050</h2>
+
+                        <strong
+                            class="valor-resumo"
+                            id="populacao-idosa-2050"
+                            aria-live="polite"
+                        >--</strong>
+
+                        <p>
+                            População 60+ projetada pela Seade
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="cartao-resumo">
+
+                    <span class="icone-resumo icone-crescimento" aria-hidden="true">
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+                    </span>
+
+                    <div class="conteudo-resumo">
+
+                        <h2>Crescimento projetado</h2>
+
+                        <strong
+                            class="valor-resumo"
+                            id="crescimento-idosos"
+                            aria-live="polite"
+                        >--</strong>
+
+                        <p>
+                            População 60+ de 2025 a 2050 · Seade
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ÁREA 5: GRÁFICO E POR QUE AGIR AGORA
+        ================================================== -->
+
+        <div class="grade-conteudo-central">
+
+
+            <!-- GRÁFICO POPULACIONAL -->
+
+            <section class="secao-grafico">
+
+                <header class="cabecalho-secao">
+
+                    <h2>
+                        Crescimento da população 60+ em Campinas
+                    </h2>
+
+                    <p>
+                        Evolução projetada da população idosa
+                        no município.
+                    </p>
+
+                </header>
+
+                <div class="area-grafico">
+
+                    <canvas
+                        id="grafico-populacao-idosa"
+                        role="img"
+                        aria-label="Gráfico de projeção da população com 60 anos ou mais em Campinas nos anos 2025, 2030, 2040 e 2050"
+                    >
+                        Gráfico das projeções populacionais
+                        da Fundação Seade.
+                    </canvas>
+
+                </div>
+
+                <p class="fonte-grafico">
+                    Fonte: Fundação Seade. Projeções municipais
+                    da população de 60 anos ou mais para
+                    2025, 2030, 2040 e 2050.
+                </p>
+
+                <p class="nota-grafico">
+                    O dado censitário de 2022 é apresentado
+                    separadamente, pois possui setores sem
+                    informação etária publicada.
+                </p>
+
+            </section>
+
+
+            <!-- POR QUE AGIR AGORA -->
+
+            <section class="secao-urgencia">
+
+                <header class="cabecalho-secao">
+
+                    <h2>Por que agir agora?</h2>
+
+                    <p>
+                        O envelhecimento populacional traz
+                        desafios e novas necessidades para
+                        os municípios.
+                    </p>
+
+                </header>
+
+                <div class="lista-motivos">
+
+                    <article class="cartao-motivo">
+
+                        <span
+                            class="icone-motivo icone-crescimento"
+                            aria-hidden="true"
+                        >
+                            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+                        </span>
+
+                        <div>
+
+                            <h3>População idosa em crescimento</h3>
+
+                            <p>
+                                As projeções indicam um aumento
+                                expressivo da população 60+
+                                de Campinas até 2050.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="cartao-motivo">
+
+                        <span
+                            class="icone-motivo icone-cuidado"
+                            aria-hidden="true"
+                        >
+                            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </span>
+
+                        <div>
+
+                            <h3>Novas necessidades de cuidado</h3>
+
+                            <p>
+                                O envelhecimento pode ampliar
+                                a necessidade de serviços de
+                                saúde e assistência social.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="cartao-motivo">
+
+                        <span
+                            class="icone-motivo icone-planejamento"
+                            aria-hidden="true"
+                        >
+                            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </span>
+
+                        <div>
+
+                            <h3>Planejamento antecipado</h3>
+
+                            <p>
+                                Conhecer os cenários futuros
+                                ajuda a organizar prioridades
+                                e recursos públicos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ==================================================
+             ÁREA 6: DO DESAFIO À OPORTUNIDADE
+        ================================================== -->
+
+        <section class="secao-oportunidade">
+
+            <header class="cabecalho-secao">
+
+                <h2>Do desafio à oportunidade</h2>
+
+                <p>
+                    O TechCare organiza dados e cenários
+                    para apoiar decisões públicas mais
+                    informadas e humanas.
+                </p>
+
+            </header>
+
+            <div class="grade-oportunidades">
+
+                <article class="cartao-oportunidade">
+
+                    <span
+                        class="icone-oportunidade"
+                        aria-hidden="true"
+                    >
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                    </span>
+
+                    <div>
+
+                        <h3>Hoje</h3>
+
+                        <p>
+                            Entender a realidade atual
+                            da população 60+ de Campinas
+                            com dados confiáveis.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <span
+                    class="seta-oportunidade"
+                    aria-hidden="true"
+                >
+                    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
+
+
+                <article class="cartao-oportunidade">
+
+                    <span
+                        class="icone-oportunidade"
+                        aria-hidden="true"
+                    >
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+
+                    <div>
+
+                        <h3>Caminho até 2050</h3>
+
+                        <p>
+                            Examinar as projeções e
+                            identificar desafios e
+                            oportunidades para o município.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <span
+                    class="seta-oportunidade"
+                    aria-hidden="true"
+                >
+                    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
+
+
+                <article class="cartao-oportunidade">
+
+                    <span
+                        class="icone-oportunidade"
+                        aria-hidden="true"
+                    >
+                        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+                    </span>
+
+                    <div>
+
+                        <h3>Decisão pública</h3>
+
+                        <p>
+                            Apoiar o planejamento de
+                            políticas e ações para
+                            uma cidade mais inclusiva.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
 
     </main>
 
+    <!-- Menu lateral -->
     <script src="/frontend/js/app.js"></script>
+
+    <!-- Biblioteca de gráficos -->
+    <script src="/frontend/js/bibliotecas/chart.umd.js"></script>
+
+    <!-- Dados e gráfico da Razão do Projeto -->
+    <script src="/frontend/js/razao-projeto.js"></script>
+
 
 </body>
 
