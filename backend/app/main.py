@@ -1,7 +1,7 @@
 #python -m uvicorn app.main:app --reload
 # hhtp /docs (ver endpoints)
 from fastapi import FastAPI
-from app.routes import indicadores
+from app.routes import indicadores, projecoes
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -11,7 +11,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Permite que o frontend local consulte a API
+# =========================================
+# COMUNICAÇÃO COM O FRONTEND
+# =========================================
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -22,15 +24,27 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# Registra o módulo de indicadores
+# =========================================
+# MÓDULOS DA API
+# =========================================
+
 app.include_router(
     indicadores.roteador,
     prefix="/api/v1"
 )
 
-# Verifica se o servidor está funcionando
+app.include_router(
+    projecoes.roteador,
+    prefix="/api/v1"
+)
+
+# =========================================
+# STATUS DO SERVIDOR
+# =========================================
+
 @app.get("/api/v1/status")
 def verificar_status():
+
     return {
         "status": "online",
         "projeto": "TechCare"

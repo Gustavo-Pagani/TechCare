@@ -87,7 +87,7 @@ O que entra:
 - [x] 26 - Etapa 12: gerar os arquivos finais para o database
       Responsável: Gustavo Pagani/ Gustavo Henrique
 
-- [ ] 28 - Criar banco PostgreSQL/PostGIS a partir do DER e carregar os arquivos da etapa 13
+- [X] 28 - Criar banco PostgreSQL/PostGIS a partir do DER e carregar os arquivos da etapa 13
       Responsável: Andre
 ### Revisão
 
