@@ -1,7 +1,7 @@
 #python -m uvicorn app.main:app --reload
 # hhtp /docs (ver endpoints)
 from fastapi import FastAPI
-from app.routes import indicadores, projecoes
+from app.routes import indicadores, projecoes, demografia, cuidados, servicos, territorio
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -38,6 +38,28 @@ app.include_router(
     prefix="/api/v1"
 )
 
+# API de demografia
+app.include_router(
+    demografia.roteador,
+    prefix="/api/v1"
+)
+
+# API de perfis de cuidado
+app.include_router(
+    cuidados.roteador,
+    prefix="/api/v1"
+)
+
+app.include_router(
+    servicos.roteador,
+    prefix="/api/v1"
+)
+
+# API territorial das APGs
+app.include_router(
+    territorio.roteador,
+    prefix="/api/v1"
+)
 # =========================================
 # STATUS DO SERVIDOR
 # =========================================
