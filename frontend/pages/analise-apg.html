@@ -1,36 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise por APG | TechCare</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Analise APG | TechCare</title>
+    <!-- Leaflet: desenha as 17 APGs a partir do GeoJSON da nossa API. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-    <link
-        rel="stylesheet"
-        href="/frontend/css/sidebar.css" 
-    >
-
+    <!-- Sidebar compartilhada e estilo exclusivo desta tela. -->
+    <link rel="stylesheet" href="/frontend/css/sidebar.css">
+    <link rel="stylesheet" href="/frontend/css/analise-apg.css">
 </head>
-
 <body>
-
     <div id="sidebar"></div>
 
-    <main>
+    <main class="pagina-apg">
+        <!-- 1. Cabeçalho, igual à organização do protótipo. -->
+        <header class="cabecalho-apg">
+            <div class="texto-cabecalho">
+                <p class="identificacao">PLANEJAMENTO PÚBLICO · CAMPINAS, SP</p>
+                <h1>Análise por APG</h1>
+                <p class="subtitulo">Explore os territórios e entenda os desafios e oportunidades de cada região.</p>
+            </div>
 
-        <h1>Analise APG</h1>
+            <div class="acoes-cabecalho">
+                <nav class="seletor-anos" aria-label="Selecionar o ano dos indicadores">
+                    <button type="button" class="botao-ano selecionado" data-ano="2022" aria-pressed="true">2022</button>
+                    <button type="button" class="botao-ano" data-ano="2030" aria-pressed="false">2030</button>
+                    <button type="button" class="botao-ano" data-ano="2040" aria-pressed="false">2040</button>
+                    <button type="button" class="botao-ano" data-ano="2050" aria-pressed="false">2050</button>
+                </nav>
+                <span id="selo-natureza" class="selo-natureza">CENSO 2022</span>
+            </div>
+        </header>
 
+        <p id="erro-apg" class="mensagem-erro" role="alert" hidden></p>
+
+        <!-- 2. Mapa à esquerda e APG selecionada à direita. -->
+        <div class="grade-principal-apg">
+            <section class="painel-mapa" aria-labelledby="titulo-mapa">
+                <header class="cabecalho-mapa">
+                    <div>
+                        <h2 id="titulo-mapa">Mapa oficial das APGs</h2>
+                        <p>17 Áreas de Planejamento e Gestão de Campinas. Clique em uma região para consultar seus dados.</p>
+                    </div>
+                    <button id="botao-mapa-inteiro" class="botao-mapa-inteiro" type="button">
+                        Ver Campinas inteira
+                    </button>
+                </header>
+
+                <div class="area-mapa">
+                    <!-- Sem mapa-base: o fundo claro e as cores reproduzem o protótipo. -->
+                    <div id="mapa-apgs" aria-label="Mapa interativo das 17 Áreas de Planejamento e Gestão de Campinas"></div>
+                    <p id="mensagem-mapa" class="mensagem-mapa">Carregando mapa territorial...</p>
+
+                    <!-- A legenda muda conforme o ano selecionado. -->
+                    <div class="legenda-mapa" aria-label="Legenda das cores do mapa">
+                        <strong id="titulo-legenda">POPULAÇÃO TOTAL · 2022</strong>
+                        <div><span class="cor-legenda legenda-baixa"></span>Baixa: até 40 mil</div>
+                        <div><span class="cor-legenda legenda-moderada"></span>Moderada: 40–70 mil</div>
+                        <div><span class="cor-legenda legenda-alta"></span>Alta: 70–100 mil</div>
+                        <div><span class="cor-legenda legenda-muito-alta"></span>Muito alta: acima de 100 mil</div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="painel-detalhes" aria-labelledby="titulo-apg-selecionada">
+                <div class="topo-detalhes">
+                    <p class="etiqueta-detalhes">APG SELECIONADA</p>
+                    <h2 id="titulo-apg-selecionada">Selecione uma APG</h2>
+                    <p id="descricao-selecao">Clique em uma região no mapa para abrir os detalhes territoriais.</p>
+                </div>
+
+                <!-- Este conteúdo é preenchido pelo JavaScript ao selecionar a região. -->
+                <div id="conteudo-apg" class="conteudo-apg" aria-live="polite">
+                    <div class="estado-vazio">
+                        <svg viewBox="0 0 24 24" class="icone-mapa-vazio" aria-hidden="true">
+                            <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/>
+                            <path d="M9 3v15M15 6v15"/>
+                        </svg>
+                        <h3>Nenhuma APG selecionada.</h3>
+                        <p>Escolha uma região do mapa para visualizar população, indicadores e perfis estimados de cuidado.</p>
+                        <p id="maiores-apgs" class="resumo-municipal"></p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <p class="nota-metodologica" id="nota-metodologica">
+            Fonte: IBGE, Censo 2022. População 60+ calculada sobre os setores com dados etários publicados; cobertura parcial.
+        </p>
     </main>
 
+    <!-- Sidebar compartilhada: já controla qual página fica selecionada. -->
     <script src="/frontend/js/app.js"></script>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/frontend/js/analise-apg.js"></script>
 </body>
-
 </html>
