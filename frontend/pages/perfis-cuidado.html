@@ -1,36 +1,685 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <!-- ==================================================
+         1. CONFIGURAÇÕES DO DOCUMENTO
+    ================================================== -->
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Perfis de Cuidado | TechCare</title>
 
-    <title>Visão Geral | TechCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
-        href="/frontend/css/sidebar.css" 
     >
 
+    <link rel="stylesheet" href="/frontend/css/sidebar.css">
+    <link rel="stylesheet" href="/frontend/css/perfis-cuidado.css">
 </head>
 
 <body>
 
+    <!-- ==================================================
+         2. SIDEBAR REUTILIZÁVEL
+    ================================================== -->
+
     <div id="sidebar"></div>
 
-    <main>
+    <main class="pagina-perfis-cuidado">
 
-        <h1>Visão Geral</h1>
+        <!-- ==================================================
+             3. CABEÇALHO E SELETOR DE ANOS
+        ================================================== -->
+
+        <header class="cabecalho-perfis">
+
+            <div class="texto-cabecalho-perfis">
+
+                <p class="identificacao-territorio">
+                    PLANEJAMENTO PÚBLICO · CAMPINAS, SP
+                </p>
+
+                <h1>
+                    Nem todo envelhecimento exige o mesmo cuidado
+                </h1>
+
+                <p class="descricao-perfis">
+                    Estimativa da distribuição da população idosa
+                    segundo autonomia funcional e necessidade de apoio.
+                </p>
+
+            </div>
+
+            <div class="acoes-cabecalho-perfis">
+
+                <nav
+                    class="seletor-anos"
+                    aria-label="Ano dos perfis de cuidado"
+                >
+
+                    <button
+                        type="button"
+                        class="botao-ano selecionado"
+                        data-ano="2022"
+                        aria-pressed="true"
+                    >
+                        2022
+                    </button>
+
+                    <button
+                        type="button"
+                        class="botao-ano"
+                        data-ano="2030"
+                        aria-pressed="false"
+                    >
+                        2030
+                    </button>
+
+                    <button
+                        type="button"
+                        class="botao-ano"
+                        data-ano="2040"
+                        aria-pressed="false"
+                    >
+                        2040
+                    </button>
+
+                    <button
+                        type="button"
+                        class="botao-ano"
+                        data-ano="2050"
+                        aria-pressed="false"
+                    >
+                        2050
+                    </button>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================================================
+             4. AVISO SOBRE OS DADOS
+        ================================================== -->
+
+        <p class="aviso-perfis">
+
+            Os perfis são estimativas populacionais baseadas em
+            parâmetros da PNS 2019, não avaliações clínicas individuais.
+
+            <span id="base-populacional">
+                População 60+ de referência: --
+            </span>
+
+        </p>
+
+
+        <!-- ==================================================
+             5. OS QUATRO PERFIS DE CUIDADO
+        ================================================== -->
+
+        <section
+            class="grade-perfis"
+            aria-label="Quatro perfis estimados de cuidado"
+        >
+
+
+            <!-- PERFIL 1: AUTÔNOMO -->
+
+            <article
+                class="cartao-perfil perfil-autonomo"
+                data-perfil="autonomo"
+            >
+
+                <div class="cabecalho-cartao-perfil">
+
+                    <span class="icone-perfil" aria-hidden="true">
+
+                        <svg class="icone" viewBox="0 0 24 24">
+                            <circle cx="12" cy="4" r="2"/>
+                            <path d="M12 7v7m0-4-5 3m5-3 5 3M9 21l3-7 3 7"/>
+                        </svg>
+
+                    </span>
+
+                    <div>
+
+                        <h2>Autônomo e independente</h2>
+
+                        <p>
+                            Pessoas idosas que mantêm autonomia funcional
+                            e realizam suas atividades cotidianas sem
+                            necessidade relevante de ajuda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="indicador-perfil">
+
+                    <strong
+                        class="perfil-percentual"
+                        id="percentual-autonomo"
+                        aria-live="polite"
+                    >
+                        --%
+                    </strong>
+
+                    <span>
+                        da população idosa estimada
+                    </span>
+
+                    <small
+                        class="quantidade-perfil"
+                        id="quantidade-autonomo"
+                    >
+                        -- pessoas estimadas
+                    </small>
+
+                </div>
+
+                <div class="trilho-perfil" aria-hidden="true">
+                    <div
+                        class="barra-perfil"
+                        id="barra-autonomo"
+                    ></div>
+                </div>
+
+                <div class="acoes-perfil">
+
+                    <p>Exemplos de ações públicas:</p>
+
+                    <ul>
+                        <li>Prevenção e saúde preventiva</li>
+                        <li>Atividade física e lazer</li>
+                        <li>Convivência comunitária</li>
+                        <li>Moradia acessível</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+            <!-- PERFIL 2: APOIO LEVE -->
+
+            <article
+                class="cartao-perfil perfil-apoio-leve"
+                data-perfil="apoio_leve"
+            >
+
+                <div class="cabecalho-cartao-perfil">
+
+                    <span class="icone-perfil" aria-hidden="true">
+
+                        <svg class="icone" viewBox="0 0 24 24">
+                            <circle cx="9" cy="7" r="3"/>
+                            <path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6M19 15a5 5 0 0 1 2 4v1"/>
+                        </svg>
+
+                    </span>
+
+                    <div>
+
+                        <h2>Apoio leve e acompanhamento</h2>
+
+                        <p>
+                            Pessoas que preservam o autocuidado, mas
+                            podem apresentar dificuldade em atividades
+                            mais complexas e necessitar de suporte ocasional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="indicador-perfil">
+
+                    <strong
+                        class="perfil-percentual"
+                        id="percentual-apoio_leve"
+                        aria-live="polite"
+                    >
+                        --%
+                    </strong>
+
+                    <span>
+                        da população idosa estimada
+                    </span>
+
+                    <small
+                        class="quantidade-perfil"
+                        id="quantidade-apoio_leve"
+                    >
+                        -- pessoas estimadas
+                    </small>
+
+                </div>
+
+                <div class="trilho-perfil" aria-hidden="true">
+                    <div
+                        class="barra-perfil"
+                        id="barra-apoio_leve"
+                    ></div>
+                </div>
+
+                <div class="acoes-perfil">
+
+                    <p>Exemplos de ações públicas:</p>
+
+                    <ul>
+                        <li>Atenção primária</li>
+                        <li>Acompanhamento familiar</li>
+                        <li>Adaptação da moradia</li>
+                        <li>Orientação e informação</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+            <!-- PERFIL 3: DEPENDÊNCIA PARCIAL -->
+
+            <article
+                class="cartao-perfil perfil-dependencia-parcial"
+                data-perfil="dependencia_parcial"
+            >
+
+                <div class="cabecalho-cartao-perfil">
+
+                    <span class="icone-perfil" aria-hidden="true">
+
+                        <svg class="icone" viewBox="0 0 24 24">
+                            <path d="m3 10 9-7 9 7v11H3V10Z"/>
+                            <path d="M9 21v-8h6v8"/>
+                        </svg>
+
+                    </span>
+
+                    <div>
+
+                        <h2>Dependência parcial</h2>
+
+                        <p>
+                            Pessoas que necessitam de ajuda regular
+                            para uma ou mais atividades do cotidiano.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="indicador-perfil">
+
+                    <strong
+                        class="perfil-percentual"
+                        id="percentual-dependencia_parcial"
+                        aria-live="polite"
+                    >
+                        --%
+                    </strong>
+
+                    <span>
+                        da população idosa estimada
+                    </span>
+
+                    <small
+                        class="quantidade-perfil"
+                        id="quantidade-dependencia_parcial"
+                    >
+                        -- pessoas estimadas
+                    </small>
+
+                </div>
+
+                <div class="trilho-perfil" aria-hidden="true">
+                    <div
+                        class="barra-perfil"
+                        id="barra-dependencia_parcial"
+                    ></div>
+                </div>
+
+                <div class="acoes-perfil">
+
+                    <p>Exemplos de ações públicas:</p>
+
+                    <ul>
+                        <li>SAD (atendimento domiciliar)</li>
+                        <li>Cuidador formal ou familiar</li>
+                        <li>Centro-dia e convivência</li>
+                        <li>Reabilitação e terapias</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+            <!-- PERFIL 4: DEPENDÊNCIA ELEVADA -->
+
+            <article
+                class="cartao-perfil perfil-dependencia-elevada"
+                data-perfil="dependencia_elevada"
+            >
+
+                <div class="cabecalho-cartao-perfil">
+
+                    <span class="icone-perfil" aria-hidden="true">
+
+                        <svg class="icone" viewBox="0 0 24 24">
+                            <circle cx="15" cy="4" r="2"/>
+                            <circle cx="9" cy="17" r="5"/>
+                            <path d="M14 9h-4l-1 4h6l2 4h3M15 9l2 4"/>
+                        </svg>
+
+                    </span>
+
+                    <div>
+
+                        <h2>Dependência elevada / fragilidade</h2>
+
+                        <p>
+                            Pessoas com maior comprometimento funcional
+                            e necessidade frequente ou contínua de cuidado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="indicador-perfil">
+
+                    <strong
+                        class="perfil-percentual"
+                        id="percentual-dependencia_elevada"
+                        aria-live="polite"
+                    >
+                        --%
+                    </strong>
+
+                    <span>
+                        da população idosa estimada
+                    </span>
+
+                    <small
+                        class="quantidade-perfil"
+                        id="quantidade-dependencia_elevada"
+                    >
+                        -- pessoas estimadas
+                    </small>
+
+                </div>
+
+                <div class="trilho-perfil" aria-hidden="true">
+                    <div
+                        class="barra-perfil"
+                        id="barra-dependencia_elevada"
+                    ></div>
+                </div>
+
+                <div class="acoes-perfil">
+
+                    <p>Exemplos de ações públicas:</p>
+
+                    <ul>
+                        <li>ILPI</li>
+                        <li>Cuidado contínuo</li>
+                        <li>Manejo clínico e social</li>
+                        <li>Suporte à família</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==================================================
+             6. JORNADA DO CUIDADO E SUA IMPORTÂNCIA
+        ================================================== -->
+
+        <div class="grade-inferior-perfis">
+
+            <!-- JORNADA DO CUIDADO -->
+
+            <section class="painel-perfis jornada-cuidado">
+
+                <header class="cabecalho-secao">
+
+                    <h2>Jornada do cuidado</h2>
+
+                    <p>
+                        Do envelhecimento saudável ao cuidado intensivo,
+                        um contínuo de necessidades.
+                    </p>
+
+                </header>
+
+                <div class="etapas-jornada">
+
+                    <div class="etapa-jornada etapa-verde">
+
+                        <span
+                            class="circulo-jornada"
+                            aria-hidden="true"
+                        >
+
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <circle cx="12" cy="4" r="2"/>
+                                <path d="M12 7v7m0-4-5 3m5-3 5 3M9 21l3-7 3 7"/>
+                            </svg>
+
+                        </span>
+
+                        <h3>Prevenção e vida ativa</h3>
+
+                        <p>
+                            Manter autonomia e qualidade de vida
+                        </p>
+
+                    </div>
+
+                    <span class="seta-jornada" aria-hidden="true">
+                        ›
+                    </span>
+
+                    <div class="etapa-jornada etapa-azul">
+
+                        <span
+                            class="circulo-jornada"
+                            aria-hidden="true"
+                        >
+
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <circle cx="9" cy="7" r="3"/>
+                                <path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6M19 15a5 5 0 0 1 2 4v1"/>
+                            </svg>
+
+                        </span>
+
+                        <h3>Apoio e acompanhamento</h3>
+
+                        <p>
+                            Suporte para novos desafios
+                        </p>
+
+                    </div>
+
+                    <span class="seta-jornada" aria-hidden="true">
+                        ›
+                    </span>
+
+                    <div class="etapa-jornada etapa-laranja">
+
+                        <span
+                            class="circulo-jornada"
+                            aria-hidden="true"
+                        >
+
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <path d="m3 10 9-7 9 7v11H3V10Z"/>
+                                <path d="M9 21v-8h6v8"/>
+                            </svg>
+
+                        </span>
+
+                        <h3>Apoio domiciliar e reabilitação</h3>
+
+                        <p>
+                            Manter independência com suporte
+                        </p>
+
+                    </div>
+
+                    <span class="seta-jornada" aria-hidden="true">
+                        ›
+                    </span>
+
+                    <div class="etapa-jornada etapa-vermelha">
+
+                        <span
+                            class="circulo-jornada"
+                            aria-hidden="true"
+                        >
+
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <circle cx="15" cy="4" r="2"/>
+                                <circle cx="9" cy="17" r="5"/>
+                                <path d="M14 9h-4l-1 4h6l2 4h3M15 9l2 4"/>
+                            </svg>
+
+                        </span>
+
+                        <h3>Cuidado intensivo e proteção</h3>
+
+                        <p>
+                            Garantir dignidade e bem-estar
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="escala-cuidado">
+
+                    <span>Mais autonomia</span>
+                    <span>Apoio leve</span>
+                    <span>Dependência parcial</span>
+                    <span>Maior necessidade de cuidado</span>
+
+                </div>
+
+                <div class="observacao-jornada">
+
+                    A necessidade de cuidado forma um contínuo.
+                    O objetivo das políticas públicas é preservar
+                    a autonomia pelo maior tempo possível e oferecer
+                    níveis progressivos de suporte quando necessário.
+
+                </div>
+
+            </section>
+
+
+            <!-- POR QUE ISSO IMPORTA -->
+
+            <section class="painel-perfis importancia-perfis">
+
+                <header class="cabecalho-secao">
+
+                    <h2>Por que isso importa?</h2>
+
+                    <p>
+                        Compreender os perfis de cuidado ajuda a direcionar
+                        melhor os recursos públicos e construir uma
+                        cidade mais preparada.
+                    </p>
+
+                </header>
+
+                <div class="lista-beneficios">
+
+                    <article>
+
+                        <h3>Perfis orientam políticas mais eficazes</h3>
+
+                        <p>
+                            Cada grupo tem necessidades específicas,
+                            que exigem soluções diferentes.
+                        </p>
+
+                    </article>
+
+                    <article>
+
+                        <h3>Planejamento baseado em evidências</h3>
+
+                        <p>
+                            Conhecer a distribuição dos perfis
+                            ajuda a priorizar investimentos.
+                        </p>
+
+                    </article>
+
+                    <article>
+
+                        <h3>Mais equidade e melhor qualidade de vida</h3>
+
+                        <p>
+                            Respostas públicas adequadas favorecem
+                            um envelhecimento mais saudável.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ==================================================
+             7. FONTE E AVISO METODOLÓGICO
+        ================================================== -->
+
+        <p
+            class="rodape-metodologico"
+            id="fonte-perfis"
+        >
+            Fonte dos parâmetros: IBGE, PNS 2019.
+            Estimativas elaboradas pelo TechCare com composição
+            demográfica da Seade e população de referência
+            do IBGE/Seade. Em 2022, há setores censitários
+            sem dados etários publicados.
+        </p>
 
     </main>
 
+
+
+    <!-- ==================================================
+     8. JAVASCRIPT
+    ================================================== -->
+
+    <!-- Menu lateral compartilhado -->
     <script src="/frontend/js/app.js"></script>
 
-</body>
+    <!-- Integração com a API de perfis de cuidado -->
+    <script src="/frontend/js/perfis-cuidado.js"></script>
 
+
+</body>02
 </html>

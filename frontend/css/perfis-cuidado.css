@@ -1,0 +1,726 @@
+
+/* =========================================================
+   TECHCARE - PERFIS DE CUIDADO
+   Padrão visual das páginas Razão do Projeto e Metodologia.
+   Sidebar compartilhada permanece em sidebar.css.
+========================================================= */
+
+
+/* =========================
+   1. ESTRUTURA GERAL
+========================= */
+
+body {
+    display: flex;
+    margin: 0;
+    background: radial-gradient(circle at 65% 0, #fff 0, #edf6f9 55%);
+}
+
+#sidebar {
+    flex: 0 0 293px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+}
+
+#sidebar .sidebar {
+    width: 100%;
+}
+
+/* Destaque do item ativo na navegação */
+#sidebar .sidebar nav a[href$="/frontend/pages/perfis-cuidado.html"] {
+    display: block;
+    padding: 12px 14px;
+    margin: -12px -14px;
+    border-radius: 8px;
+    background: linear-gradient(110deg, #078e9b, #11b6ae);
+    color: #fff;
+    font-weight: 700;
+}
+
+.pagina-perfis-cuidado {
+    --pc-azul: #0b2859;
+    --pc-texto: #667b9c;
+    --pc-borda: #dce8ef;
+    --pc-verde: #129958;
+    --pc-azul-claro: #0968ca;
+    --pc-laranja: #ed9200;
+    --pc-vermelho: #ed3845;
+    --pc-sombra: 0 11px 24px #1c496514;
+
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 26px 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    font-family: "Manrope", Arial, sans-serif;
+    color: var(--pc-azul);
+}
+
+.pagina-perfis-cuidado *,
+.pagina-perfis-cuidado *::before,
+.pagina-perfis-cuidado *::after {
+    box-sizing: border-box;
+}
+
+.pagina-perfis-cuidado h1,
+.pagina-perfis-cuidado h2,
+.pagina-perfis-cuidado h3,
+.pagina-perfis-cuidado p {
+    overflow-wrap: break-word;
+}
+
+/* Ícones SVG */
+.pagina-perfis-cuidado .icone {
+    display: block;
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================
+   2. CABEÇALHO E ANOS
+========================= */
+
+.cabecalho-perfis {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.texto-cabecalho-perfis {
+    min-width: 0;
+    max-width: 750px;
+}
+
+.identificacao-territorio {
+    margin: 0;
+    color: #078c96;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.texto-cabecalho-perfis h1 {
+    margin: 5px 0 0;
+    font-size: clamp(27px, 2.35vw, 37px);
+    line-height: 1.13;
+    letter-spacing: -1.4px;
+    color: var(--pc-azul);
+}
+
+.descricao-perfis {
+    margin: 7px 0 0;
+    color: var(--pc-texto);
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.acoes-cabecalho-perfis {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.seletor-anos {
+    display: flex;
+    overflow: hidden;
+    border: 1px solid var(--pc-borda);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.botao-ano {
+    padding: 10px 14px;
+    border: 0;
+    border-right: 1px solid var(--pc-borda);
+    background: #fff;
+    color: var(--pc-azul);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.botao-ano:last-child {
+    border-right: 0;
+}
+
+.botao-ano:hover:not(.selecionado) {
+    background: #eef9fa;
+}
+
+.botao-ano.selecionado {
+    background: #099aa1;
+    color: #fff;
+}
+
+.botao-ano:focus-visible {
+    outline: 3px solid #16c7bb;
+    outline-offset: -3px;
+}
+
+.etiqueta-estimativa {
+    padding: 7px 11px;
+    border-radius: 7px;
+    background: #fff0e9;
+    color: #b95b21;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .03em;
+}
+
+
+/* =========================
+   3. AVISO DE ESTIMATIVAS
+========================= */
+
+.aviso-perfis {
+    margin: 0;
+    color: var(--pc-texto);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#base-populacional {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: 700;
+    color: #365c7d;
+}
+
+
+/* =========================
+   4. QUATRO CARTÕES DE PERFIL
+========================= */
+
+.grade-perfis {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.cartao-perfil {
+    --cor-perfil: var(--pc-verde);
+    --fundo-acao: #eff8f3;
+    --borda-acao: #d7ebe0;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 12px;
+    padding: 17px 17px 15px;
+
+    border: 1px solid #e0ebf1;
+    border-top: 4px solid var(--cor-perfil);
+    border-radius: 9px;
+    background: #fff;
+    box-shadow: var(--pc-sombra);
+}
+
+.perfil-apoio-leve {
+    --cor-perfil: var(--pc-azul-claro);
+    --fundo-acao: #eef5fd;
+    --borda-acao: #dbe7fa;
+}
+
+.perfil-dependencia-parcial {
+    --cor-perfil: var(--pc-laranja);
+    --fundo-acao: #fff7ed;
+    --borda-acao: #f7e9d5;
+}
+
+.perfil-dependencia-elevada {
+    --cor-perfil: var(--pc-vermelho);
+    --fundo-acao: #fff0f1;
+    --borda-acao: #f7dce0;
+}
+
+/* Cabeçalho de cada cartão */
+.cabecalho-cartao-perfil {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    min-width: 0;
+    min-height: 94px;
+}
+
+.cabecalho-cartao-perfil > div {
+    min-width: 0;
+}
+
+.icone-perfil {
+    flex: 0 0 67px;
+    width: 67px;
+    height: 67px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--cor-perfil);
+    color: #fff;
+    font-size: 29px;
+}
+
+.cabecalho-cartao-perfil h2 {
+    margin: 0 0 5px;
+    color: var(--cor-perfil);
+    font-size: 18px;
+    line-height: 1.28;
+    letter-spacing: -.35px;
+}
+
+.cabecalho-cartao-perfil p {
+    margin: 0;
+    color: #617797;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Número e quantidade do perfil */
+.indicador-perfil {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 2px;
+    padding-top: 9px;
+    border-top: 1px solid #edf0f3;
+}
+
+.perfil-percentual {
+    color: var(--cor-perfil);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -.9px;
+    line-height: 1.15;
+    font-variant-numeric: tabular-nums;
+}
+
+.indicador-perfil > span {
+    color: var(--pc-texto);
+    font-size: 11px;
+}
+
+.quantidade-perfil {
+    display: block;
+    flex-basis: 100%;
+    color: #536b8b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Barras de porcentagem */
+.trilho-perfil {
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #eaf0f4;
+}
+
+.barra-perfil {
+    width: 0;
+    max-width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--cor-perfil);
+    transition: width .35s ease;
+}
+
+/* Exemplos de ações públicas */
+.acoes-perfil {
+    margin-top: auto;
+}
+
+.acoes-perfil > p {
+    margin: 0 0 7px;
+    font-size: 11px;
+    color: var(--pc-texto);
+}
+
+.acoes-perfil ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.acoes-perfil li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 9px 7px;
+    border-radius: 7px;
+    background: var(--fundo-acao);
+    border: 1px solid var(--borda-acao);
+    color: #526c88;
+    font-size: 10.5px;
+    line-height: 1.3;
+}
+
+.acoes-perfil li::before {
+    content: "";
+    flex: 0 0 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cor-perfil);
+}
+
+
+/* =========================
+   5. JORNADA E IMPORTÂNCIA
+========================= */
+
+.grade-inferior-perfis {
+    display: grid;
+    grid-template-columns: minmax(0, 1.85fr) minmax(280px, 1fr);
+    align-items: stretch;
+    gap: 15px;
+}
+
+.painel-perfis {
+    min-width: 0;
+    padding: 19px;
+    background: #fff;
+    border: 1px solid #e0ebf1;
+    border-radius: 9px;
+    box-shadow: var(--pc-sombra);
+}
+
+.painel-perfis .cabecalho-secao {
+    margin-bottom: 14px;
+}
+
+.painel-perfis .cabecalho-secao h2 {
+    margin: 0;
+    color: var(--pc-azul);
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -.45px;
+}
+
+.painel-perfis .cabecalho-secao p {
+    margin: 4px 0 0;
+    color: var(--pc-texto);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+/* Linha de quatro fases da jornada */
+.etapas-jornada {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr) 18px
+        minmax(0, 1fr) 18px
+        minmax(0, 1fr) 18px
+        minmax(0, 1fr);
+
+    align-items: start;
+    gap: 4px;
+}
+
+.etapa-jornada {
+    min-width: 0;
+    text-align: center;
+}
+
+.circulo-jornada {
+    width: 59px;
+    height: 59px;
+    margin: 0 auto 8px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 25px;
+}
+
+.etapa-verde .circulo-jornada {
+    background: linear-gradient(135deg, #138b51, #41c178);
+}
+
+.etapa-azul .circulo-jornada {
+    background: linear-gradient(135deg, #0757bc, #40b9e7);
+}
+
+.etapa-laranja .circulo-jornada {
+    background: linear-gradient(135deg, #f0a013, #ffbf27);
+}
+
+.etapa-vermelha .circulo-jornada {
+    background: linear-gradient(135deg, #e92c3c, #fb5860);
+}
+
+.etapa-jornada h3 {
+    margin: 0;
+    color: var(--pc-azul);
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.etapa-jornada p {
+    margin: 5px 0 0;
+    color: var(--pc-texto);
+    font-size: 10.5px;
+    line-height: 1.35;
+}
+
+.seta-jornada {
+    margin-top: 15px;
+    color: #a9c0d9;
+    text-align: center;
+    font-size: 29px;
+    line-height: 1;
+}
+
+/* Régua das intensidades de cuidado */
+.escala-cuidado {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 6px solid transparent;
+    border-image: linear-gradient(
+        90deg,
+        #159957,
+        #1589d2 33%,
+        #f39b14 66%,
+        #ed3845
+    ) 1;
+}
+
+.escala-cuidado span {
+    font-size: 9.5px;
+    font-weight: 800;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.escala-cuidado span:first-child {
+    color: var(--pc-verde);
+    text-align: left;
+}
+
+.escala-cuidado span:nth-child(2) {
+    color: var(--pc-azul-claro);
+}
+
+.escala-cuidado span:nth-child(3) {
+    color: var(--pc-laranja);
+}
+
+.escala-cuidado span:last-child {
+    color: var(--pc-vermelho);
+    text-align: right;
+}
+
+.observacao-jornada {
+    margin-top: 16px;
+    padding: 13px 15px;
+    border: 1px solid #d3e6fb;
+    border-radius: 8px;
+    background: #eff7ff;
+    color: #1357b2;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Painel lateral: relevância dos perfis */
+.lista-beneficios {
+    display: grid;
+    gap: 9px;
+}
+
+.lista-beneficios article {
+    padding: 12px 13px 12px 17px;
+    border: 1px solid #e1ebf0;
+    border-left: 4px solid #12a8a6;
+    border-radius: 8px;
+    background: #f8fbfc;
+}
+
+.lista-beneficios article:nth-child(2) {
+    border-left-color: #1275d1;
+}
+
+.lista-beneficios article:nth-child(3) {
+    border-left-color: #229f71;
+}
+
+.lista-beneficios h3 {
+    margin: 0;
+    color: var(--pc-azul);
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.lista-beneficios p {
+    margin: 4px 0 0;
+    color: var(--pc-texto);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   6. FONTE E METODOLOGIA
+========================= */
+
+.rodape-metodologico {
+    margin: 0;
+    padding-bottom: 3px;
+    color: #758aa6;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+
+/* =========================
+   7. TELAS MENORES
+========================= */
+
+@media (max-width: 1450px) {
+
+    .acoes-perfil ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .acoes-perfil li {
+        min-height: 36px;
+    }
+
+    .cabecalho-cartao-perfil {
+        min-height: 110px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .pagina-perfis-cuidado {
+        padding: 18px 20px 26px;
+    }
+
+    .cabecalho-perfis {
+        flex-wrap: wrap;
+    }
+
+    .acoes-cabecalho-perfis {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .grade-inferior-perfis {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1020px) {
+
+    .grade-perfis {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-cartao-perfil {
+        min-height: 0;
+    }
+
+    .acoes-perfil ul {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+
+    body {
+        display: block;
+    }
+
+    #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    #sidebar .sidebar {
+        height: auto;
+        min-height: 0;
+    }
+
+    .pagina-perfis-cuidado {
+        padding: 16px;
+    }
+
+    .texto-cabecalho-perfis h1 {
+        font-size: 28px;
+    }
+
+    .descricao-perfis {
+        font-size: 14px;
+    }
+
+    .acoes-cabecalho-perfis {
+        align-items: flex-start;
+    }
+
+    .etapas-jornada {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .seta-jornada {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .seletor-anos {
+        width: 100%;
+    }
+
+    .botao-ano {
+        flex: 1;
+        padding: 10px 7px;
+    }
+
+    .cabecalho-cartao-perfil {
+        flex-direction: column;
+    }
+
+    .acoes-perfil ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .painel-perfis {
+        padding: 15px;
+    }
+
+    .etapas-jornada {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 18px;
+    }
+
+    .escala-cuidado span {
+        font-size: 8px;
+    }
+}
