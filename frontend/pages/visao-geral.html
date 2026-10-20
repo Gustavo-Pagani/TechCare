@@ -1,7 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <!-- =========================================
+         1. CONFIGURAÇÕES E ESTILOS
+    ========================================= -->
 
     <meta charset="UTF-8">
 
@@ -13,24 +17,496 @@
     <title>Visão Geral | TechCare</title>
 
     <link
-        rel="stylesheet"
-        href="/frontend/css/sidebar.css" >
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/sidebar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/visao-geral.css"
+    >
 </head>
 
 <body>
 
+    <!-- =========================================
+         2. SIDEBAR COMPARTILHADA
+    ========================================= -->
+
     <div id="sidebar"></div>
 
-    <main>
+    <main class="pagina-visao-geral">
 
-        <h1>Visão Geral</h1>
+        <!-- =========================================
+             3. CABEÇALHO E ESCOLHA DO ANO
+        ========================================= -->
+
+        <header class="cabecalho-visao">
+
+            <div class="texto-cabecalho-visao">
+
+                <p class="identificacao-territorio">
+                    PLANEJAMENTO PÚBLICO · CAMPINAS, SP
+                </p>
+
+                <h1>Visão Geral</h1>
+
+                <p class="descricao-visao">
+                    Panorama do envelhecimento, das projeções
+                    populacionais e das necessidades estimadas
+                    de cuidado.
+                </p>
+
+            </div>
+
+            <nav
+                class="seletor-anos"
+                aria-label="Selecionar ano dos indicadores"
+            >
+
+                <button
+                    type="button"
+                    class="botao-ano selecionado"
+                    data-ano="2022"
+                    aria-pressed="true"
+                >2022</button>
+
+                <button
+                    type="button"
+                    class="botao-ano"
+                    data-ano="2030"
+                    aria-pressed="false"
+                >2030</button>
+
+                <button
+                    type="button"
+                    class="botao-ano"
+                    data-ano="2040"
+                    aria-pressed="false"
+                >2040</button>
+
+                <button
+                    type="button"
+                    class="botao-ano"
+                    data-ano="2050"
+                    aria-pressed="false"
+                >2050</button>
+
+            </nav>
+
+        </header>
+
+        <p
+            class="contexto-dados"
+            id="contexto-ano"
+            aria-live="polite"
+        >
+            2022: dados etários publicados do Censo IBGE;
+            os perfis de cuidado são estimativas do TechCare.
+        </p>
+
+        <p
+            class="mensagem-erro"
+            id="erro-visao-geral"
+            role="alert"
+            hidden
+        ></p>
+
+
+        <!-- =========================================
+             4. QUATRO INDICADORES
+        ========================================= -->
+
+        <section
+            class="grade-indicadores"
+            aria-label="Indicadores do ano selecionado"
+        >
+
+            <!-- POPULAÇÃO 60+ -->
+
+            <article class="cartao-indicador">
+
+                <span
+                    class="icone-indicador cor-turquesa"
+                    aria-hidden="true"
+                >
+                    <svg class="icone" viewBox="0 0 24 24">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </span>
+
+                <div class="conteudo-indicador">
+
+                    <h2>População 60+</h2>
+
+                    <strong
+                        class="valor-indicador"
+                        id="populacao-60"
+                        aria-live="polite"
+                    >--</strong>
+
+                    <p id="percentual-60">
+                        --% da população de referência
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FAIXA ETÁRIA MAIS AVANÇADA -->
+
+            <article class="cartao-indicador">
+
+                <span
+                    class="icone-indicador cor-azul"
+                    aria-hidden="true"
+                >
+                    <svg class="icone" viewBox="0 0 24 24">
+                        <circle cx="12" cy="4" r="2"/>
+                        <path d="M12 7v7m0-4-5 3m5-3 5 3M9 21l3-7 3 7"/>
+                    </svg>
+                </span>
+
+                <div class="conteudo-indicador">
+
+                    <h2 id="titulo-faixa-avancada">
+                        Pessoas com 70+ entre os idosos
+                    </h2>
+
+                    <strong
+                        class="valor-indicador"
+                        id="populacao-faixa-avancada"
+                        aria-live="polite"
+                    >--</strong>
+
+                    <p id="descricao-faixa-avancada">
+                        Faixa etária publicada no Censo 2022
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- NECESSIDADE DE AJUDA -->
+
+            <article class="cartao-indicador">
+
+                <span
+                    class="icone-indicador cor-verde"
+                    aria-hidden="true"
+                >
+                    <svg class="icone" viewBox="0 0 24 24">
+                        <path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.9A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/>
+                    </svg>
+                </span>
+
+                <div class="conteudo-indicador">
+
+                    <h2>Necessidade de ajuda</h2>
+
+                    <strong
+                        class="valor-indicador"
+                        id="necessidade-ajuda"
+                        aria-live="polite"
+                    >--</strong>
+
+                    <p id="descricao-ajuda">
+                        Estimativa de apoio em atividades cotidianas
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DEPENDÊNCIA ELEVADA -->
+
+            <article class="cartao-indicador">
+
+                <span
+                    class="icone-indicador cor-laranja"
+                    aria-hidden="true"
+                >
+                    <svg class="icone" viewBox="0 0 24 24">
+                        <path d="M12 3a9 9 0 1 0 9 9"/>
+                        <path d="M12 12l5-5M16 3h5v5"/>
+                        <circle cx="12" cy="12" r="1"/>
+                    </svg>
+                </span>
+
+                <div class="conteudo-indicador">
+
+                    <h2>Dependência elevada</h2>
+
+                    <strong
+                        class="valor-indicador"
+                        id="dependencia-elevada"
+                        aria-live="polite"
+                    >--</strong>
+
+                    <p id="descricao-dependencia">
+                        Perfil de maior necessidade de cuidado
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================================
+             5. GRÁFICOS E LEITURA DO CENÁRIO
+        ========================================= -->
+
+        <div class="grade-conteudo-visao">
+
+            <!-- GRÁFICOS -->
+
+            <section class="painel-visao painel-evolucao">
+
+                <header class="cabecalho-secao">
+
+                    <h2>Evolução da população idosa</h2>
+
+                    <p>
+                        Projeções municipais da Fundação Seade,
+                        de 2025 a 2050.
+                    </p>
+
+                </header>
+
+                <div class="grade-graficos">
+
+                    <!-- GRÁFICO 60+ -->
+
+                    <div class="bloco-grafico">
+
+                        <h3>População 60+</h3>
+
+                        <div class="area-grafico">
+
+                            <canvas
+                                id="grafico-60"
+                                role="img"
+                                aria-label="Projeções Seade da população 60+ de Campinas entre 2025 e 2050"
+                            >
+                                Gráfico da população com 60 anos ou mais.
+                            </canvas>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- GRÁFICO 75+ -->
+
+                    <div class="bloco-grafico">
+
+                        <h3>População 75+</h3>
+
+                        <div class="area-grafico">
+
+                            <canvas
+                                id="grafico-75"
+                                role="img"
+                                aria-label="Projeções Seade da população 75+ de Campinas entre 2025 e 2050"
+                            >
+                                Gráfico da população com 75 anos ou mais.
+                            </canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CRESCIMENTO PROJETADO -->
+
+                <div class="faixa-crescimento">
+
+                    <div>
+
+                        <span>
+                            Crescimento projetado da população 60+
+                            · 2025 a 2050
+                        </span>
+
+                        <strong id="indicador-crescimento">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div class="aumento-absoluto">
+
+                        <strong id="indicador-crescimento-absoluto">
+                            --
+                        </strong>
+
+                        <span>pessoas a mais</span>
+
+                    </div>
+
+                </div>
+
+                <p class="nota-graficos">
+                    O Censo 2022 é uma referência separada:
+                    não integra as linhas de projeção da Seade.
+                </p>
+
+            </section>
+
+
+            <!-- LEITURA DO CENÁRIO -->
+
+            <section class="painel-visao painel-leitura">
+
+                <header class="cabecalho-secao">
+
+                    <h2>Leitura do cenário</h2>
+
+                    <p id="subtitulo-leitura">
+                        O que os indicadores revelam para o
+                        planejamento municipal.
+                    </p>
+
+                </header>
+
+                <div class="lista-leituras">
+
+                    <!-- ESTRUTURA ETÁRIA -->
+
+                    <article class="cartao-leitura">
+
+                        <span
+                            class="icone-leitura cor-turquesa-clara"
+                            aria-hidden="true"
+                        >
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <path d="M3 3v18h18M7 17v-5h3v5M12 17V7h3v10M17 17V10h3v7"/>
+                            </svg>
+                        </span>
+
+                        <div>
+
+                            <h3>ESTRUTURA ETÁRIA</h3>
+
+                            <p id="leitura-estrutura">
+                                Aguardando indicadores...
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- NECESSIDADE DE APOIO -->
+
+                    <article class="cartao-leitura">
+
+                        <span
+                            class="icone-leitura cor-azul"
+                            aria-hidden="true"
+                        >
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <circle cx="12" cy="4" r="2"/>
+                                <path d="M12 7v7m0-4-5 3m5-3 5 3M9 21l3-7 3 7"/>
+                            </svg>
+                        </span>
+
+                        <div>
+
+                            <h3>NECESSIDADE DE APOIO</h3>
+
+                            <p id="leitura-cuidados">
+                                Aguardando estimativas...
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PLANEJAMENTO PÚBLICO -->
+
+                    <article class="cartao-leitura">
+
+                        <span
+                            class="icone-leitura cor-verde"
+                            aria-hidden="true"
+                        >
+                            <svg class="icone" viewBox="0 0 24 24">
+                                <path d="m3 10 9-7 9 7v11H3V10Z"/>
+                                <path d="M9 21v-8h6v8"/>
+                            </svg>
+                        </span>
+
+                        <div>
+
+                            <h3>PLANEJAMENTO PÚBLICO</h3>
+
+                            <p id="leitura-planejamento">
+                                Aguardando o cenário...
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================================
+             6. FONTES E LIMITAÇÕES
+        ========================================= -->
+
+        <p
+            class="rodape-visao"
+            id="fonte-visao"
+        >
+            Fontes: IBGE, Censo 2022; Fundação Seade;
+            PNS 2019. Os perfis de cuidado são estimativas
+            do TechCare, não vagas ou diagnósticos individuais.
+        </p>
 
     </main>
 
+
+    <!-- =========================================
+         7. JAVASCRIPT
+    ========================================= -->
+
     <script src="/frontend/js/app.js"></script>
 
+    <script src="/frontend/js/bibliotecas/chart.umd.js"></script>
+
+    <script src="/frontend/js/visao-geral.js"></script>
+
 </body>
-
 </html>
-
