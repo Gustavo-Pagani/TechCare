@@ -1,9 +1,7 @@
 
 """APIs territoriais do TechCare: indicadores das 17 APGs e mapa GeoJSON.
 
-Dados de 2022: IBGE/Censo (cobertura etária parcial).
-Dados de 2030/2040/2050: estimativas territoriais do TechCare,
-NÃO projeções oficiais da Seade por APG.
+
 """
 
 import json
