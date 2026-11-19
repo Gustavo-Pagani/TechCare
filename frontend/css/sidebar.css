@@ -11,8 +11,9 @@
     height: 100vh;
     align-self: flex-start;
 }
+
 .sidebar {
-    width: 293px;
+    width: 100%;
     height: 100vh;
     background-color: #052f59;
     padding: 24px;
@@ -52,7 +53,6 @@
 
 .sidebar-subtitle {
     color: rgb(225, 218, 218);
-    
 }
 
 
@@ -153,13 +153,6 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Reserva o espaço do menu lateral */
-#sidebar {
-    flex: 0 0 293px;
 }
 
 /* Conteúdo principal à direita */
@@ -169,6 +162,11 @@ main {
     padding: 24px;
     box-sizing: border-box;
 }
+
+
+/* =====================================
+   AVISO COMPARTILHADO DE ERRO
+===================================== */
 
 /* Aviso compartilhado de erro no carregamento */
 main > .aviso-erro-dados {
@@ -191,4 +189,28 @@ main > .aviso-erro-dados {
 
 main > .aviso-erro-dados[hidden] {
     display: none;
+}
+
+/* Coloca o menu acima do conteúdo em todas as páginas */
+@media (max-width: 760px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        flex: 0 0 auto;
+        position: relative;
+        top: auto;
+        align-self: stretch;
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
 }

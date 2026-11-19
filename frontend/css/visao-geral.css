@@ -1,4 +1,3 @@
-
 /* =========================================================
    TECHCARE - VISÃO GERAL
    Estilos exclusivos desta tela.
@@ -20,13 +19,6 @@ body {
     );
 }
 
-#sidebar {
-    flex: 0 0 293px;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    height: 100vh;
-}
 
 .pagina-visao-geral {
     --vg-azul: #0b2859;
@@ -545,21 +537,6 @@ body {
 }
 
 @media (max-width: 760px) {
-
-    body {
-        display: block;
-    }
-
-    #sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
-    #sidebar .sidebar {
-        height: auto;
-        min-height: 0;
-    }
 
     .pagina-visao-geral {
         padding: 16px;

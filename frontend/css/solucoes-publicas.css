@@ -334,20 +334,6 @@ body {
 
 
 /* =========================
-   ITEM ATIVO DA SIDEBAR
-   (marca "Soluções Públicas" via JS na página)
-========================= */
-
-.sidebar nav a.active {
-    display: inline-block;
-    background: linear-gradient(135deg, #0aa0a6, #0ab9b1);
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 8px;
-}
-
-
-/* =========================
    RESPONSIVO
 ========================= */
 

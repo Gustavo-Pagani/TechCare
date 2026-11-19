@@ -22,13 +22,6 @@ body {
     background: radial-gradient(circle at 65% 0, #fff 0, #edf6f9 58%);
 }
 
-#sidebar {
-    flex: 0 0 293px;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    height: 100vh;
-}
 
 .pagina-apg,
 .pagina-apg * { box-sizing: border-box; }
@@ -579,9 +572,6 @@ body {
 }
 
 @media (max-width: 760px) {
-    body { display: block; }
-    #sidebar { position: relative; width: 100%; height: auto; }
-    #sidebar .sidebar { width: 100%; height: auto; min-height: 0; }
     .pagina-apg { padding: 16px; }
     .subtitulo { font-size: 15px; }
     .acoes-cabecalho { flex-wrap: wrap; }
