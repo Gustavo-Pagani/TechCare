@@ -50,10 +50,11 @@ async function carregarIndicadores() {
         document.getElementById("indicador-renda-responsavel").textContent =
             formatoMoeda.format(dados.renda_media_responsavel);
 
+        limparErroDados();
+
     } catch (erro) {
-
         console.error("Erro ao carregar indicadores:", erro);
-
+        mostrarErroDados();
     }
 }
 

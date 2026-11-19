@@ -66,3 +66,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 });
+
+
+// Aviso compartilhado de falha no carregamento dos dados.
+function mostrarErroDados() {
+    let aviso = document.getElementById("aviso-erro-dados");
+
+    if (!aviso) {
+        aviso = document.createElement("p");
+        aviso.id = "aviso-erro-dados";
+        aviso.className = "aviso-erro-dados";
+        aviso.setAttribute("role", "alert");
+
+        document.querySelector("main").prepend(aviso);
+    }
+
+    aviso.textContent = "Não foi possível carregar os dados.";
+    aviso.hidden = false;
+}
+
+function limparErroDados() {
+    const aviso = document.getElementById("aviso-erro-dados");
+
+    if (aviso) {
+        aviso.hidden = true;
+        aviso.textContent = "";
+    }
+}

@@ -94,18 +94,13 @@ function escaparHTML(valor) {
     });
 }
 
-function informarErro(mensagem) {
-    const aviso = porId("erro-apg");
-    aviso.textContent = mensagem;
-    aviso.hidden = false;
+function informarErro() {
+    mostrarErroDados();
 }
 
 function limparErro() {
-    const aviso = porId("erro-apg");
-    aviso.textContent = "";
-    aviso.hidden = true;
+    limparErroDados();
 }
-
 async function buscarAPG(caminho) {
     const resposta = await fetch(API_APG + caminho);
 

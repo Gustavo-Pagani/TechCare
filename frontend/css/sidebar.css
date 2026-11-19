@@ -169,3 +169,26 @@ main {
     padding: 24px;
     box-sizing: border-box;
 }
+
+/* Aviso compartilhado de erro no carregamento */
+main > .aviso-erro-dados {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 14px 18px;
+
+    background-color: #fff1f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #dc2626;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+main > .aviso-erro-dados[hidden] {
+    display: none;
+}

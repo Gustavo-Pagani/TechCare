@@ -236,20 +236,17 @@ async function iniciarRazaoProjeto() {
         // Ativa os botões de seleção
         configurarBotoes();
 
+        limparErroDados();
+
         console.log("Razão do Projeto carregada!");
 
     } catch (erro) {
-
         console.error(
             "Erro ao carregar Razão do Projeto:",
             erro
         );
 
-        document.querySelector(".nota-grafico").textContent =
-            "Não foi possível carregar os dados. " +
-            "Verifique se o FastAPI está funcionando " +
-            "e se a biblioteca Chart.js foi carregada.";
-
+        mostrarErroDados();
     }
 
 }

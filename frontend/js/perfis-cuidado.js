@@ -1,4 +1,3 @@
-
 /* =========================================================
    TECHCARE - PERFIS DE CUIDADO
 
@@ -272,6 +271,9 @@ async function carregarPerfisDoAno(ano) {
         // Destaca o botão correspondente
         destacarAnoSelecionado(ano);
 
+        // Esconde o aviso após carregar os dados com sucesso
+        limparErroDados();
+
         console.log(
             `Perfis de Cuidado de ${ano} carregados com sucesso.`
         );
@@ -283,11 +285,8 @@ async function carregarPerfisDoAno(ano) {
             erro
         );
 
-        document.getElementById(
-            "base-populacional"
-        ).textContent =
-            "Não foi possível carregar os dados. " +
-            "Verifique se o FastAPI está funcionando.";
+        // Mostra o aviso padronizado no topo da página
+        mostrarErroDados();
 
     } finally {
 

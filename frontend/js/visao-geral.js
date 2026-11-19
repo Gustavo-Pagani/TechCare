@@ -101,25 +101,12 @@ function numero(valor) {
 }
 
 
-function mostrarErro(mensagem) {
-
-    const elemento = document.getElementById(
-        "erro-visao-geral"
-    );
-
-    elemento.hidden = false;
-    elemento.textContent = mensagem;
+function mostrarErro() {
+    mostrarErroDados();
 }
 
-
 function limparErro() {
-
-    const elemento = document.getElementById(
-        "erro-visao-geral"
-    );
-
-    elemento.hidden = true;
-    elemento.textContent = "";
+    limparErroDados();
 }
 
 
