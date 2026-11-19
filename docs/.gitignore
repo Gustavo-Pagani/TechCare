@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Ambiente
+.env
+
+# Dados
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
