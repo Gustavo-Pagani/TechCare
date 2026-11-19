@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análise por APG | TechCare</title>
-    <!-- Prepara conexao (faz carregar mais rapido)-->  
+    <!-- Prepara conexao (faz carregar mais rapido)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -43,8 +43,8 @@
             <section class="painel-mapa" aria-labelledby="titulo-mapa">
                 <header class="cabecalho-mapa">
                     <div>
-                        <h2 id="titulo-mapa">Mapa oficial das APGs</h2>
-                        <p>17 Áreas de Planejamento e Gestão de Campinas. Clique em uma região para consultar seus dados.</p>
+                        <h2 id="titulo-mapa">Demanda estimada de cuidado por APG</h2>
+                        <p>As cores representam a quantidade estimada de idosos com dependência parcial ou elevada. Clique em uma região para consultar seus dados.</p>
                     </div>
                     <button id="botao-mapa-inteiro" class="botao-mapa-inteiro" type="button">
                         Ver Campinas inteira
@@ -52,17 +52,14 @@
                 </header>
 
                 <div class="area-mapa">
-                    <!-- Sem mapa-base: o fundo claro e as cores reproduzem o protótipo. -->
-                    <div id="mapa-apgs" aria-label="Mapa interativo das 17 Áreas de Planejamento e Gestão de Campinas"></div>
+                    <!-- As cores representam a demanda estimada de cuidado. -->
+                    <div id="mapa-apgs" aria-label="Mapa interativo da demanda estimada de cuidado nas 17 Áreas de Planejamento e Gestão de Campinas"></div>
                     <p id="mensagem-mapa" class="mensagem-mapa">Carregando mapa territorial...</p>
 
-                    <!-- A legenda muda conforme o ano selecionado. -->
-                    <div class="legenda-mapa" aria-label="Legenda das cores do mapa">
-                        <strong id="titulo-legenda">POPULAÇÃO TOTAL · 2022</strong>
-                        <div><span class="cor-legenda legenda-baixa"></span>Baixa: até 40 mil</div>
-                        <div><span class="cor-legenda legenda-moderada"></span>Moderada: 40–70 mil</div>
-                        <div><span class="cor-legenda legenda-alta"></span>Alta: 70–100 mil</div>
-                        <div><span class="cor-legenda legenda-muito-alta"></span>Muito alta: acima de 100 mil</div>
+                    <!-- A legenda é preenchida com as mesmas faixas do mapa. -->
+                    <div class="legenda-mapa"
+                         aria-label="Legenda da demanda estimada de cuidado"
+                         hidden>
                     </div>
                 </div>
             </section>
@@ -90,7 +87,8 @@
         </div>
 
         <p class="nota-metodologica" id="nota-metodologica">
-            Fonte: IBGE, Censo 2022. População 60+ calculada sobre os setores com dados etários publicados; cobertura parcial.
+            Cores: soma estimada dos perfis de dependência parcial e elevada.
+            Em 2022, a população de referência utiliza os setores com dados etários publicados, com cobertura parcial.
         </p>
     </main>
 

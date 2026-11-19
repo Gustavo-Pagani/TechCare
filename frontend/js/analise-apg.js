@@ -3,6 +3,7 @@
 
    APIs reais utilizadas:
    GET /api/v1/territorio/geojson?ano=2022
+   GET /api/v1/cuidados/perfis-apg?ano=2022
    GET /api/v1/territorio/apg/{id_apg}?ano=2022
    GET /api/v1/cuidados/perfis-apg?ano=2022&id_apg=2
 
@@ -19,12 +20,29 @@ const percentualBR = new Intl.NumberFormat("pt-BR", {
     maximumFractionDigits: 2
 });
 
-const CORES_POPULACAO = {
-    baixa: "#58bd80",       // Até 40 mil
-    moderada: "#f6c94e",   // Acima de 40 mil até 70 mil
-    alta: "#ffa33c",       // Acima de 70 mil até 100 mil
-    muitoAlta: "#ee535b"   // Acima de 100 mil
-};
+// Faixas fixas para comparar a demanda estimada entre os anos.
+const FAIXAS_CUIDADO = [
+    {
+        limite: 2000,
+        cor: "#58bd80",
+        texto: "Baixa: até 2.000 pessoas"
+    },
+    {
+        limite: 4000,
+        cor: "#f6c94e",
+        texto: "Moderada: 2.001 a 4.000 pessoas"
+    },
+    {
+        limite: 6000,
+        cor: "#ffa33c",
+        texto: "Alta: 4.001 a 6.000 pessoas"
+    },
+    {
+        limite: Infinity,
+        cor: "#ee535b",
+        texto: "Muito alta: acima de 6.000 pessoas"
+    }
+];
 
 let mapaAPG = null;
 let camadaAPGs = null;
@@ -101,6 +119,7 @@ function informarErro() {
 function limparErro() {
     limparErroDados();
 }
+
 async function buscarAPG(caminho) {
     const resposta = await fetch(API_APG + caminho);
 
@@ -111,11 +130,107 @@ async function buscarAPG(caminho) {
     return resposta.json();
 }
 
+// Soma os dois perfis utilizados na classificação do mapa.
+function calcularDemandaCuidado(cuidado) {
+
+    if (!Array.isArray(cuidado.perfis)) {
+        throw new Error("A API não retornou os perfis de cuidado.");
+    }
+
+    const codigos = [
+        "dependencia_parcial",
+        "dependencia_elevada"
+    ];
+
+    let demanda = 0;
+
+    codigos.forEach(function (codigo) {
+
+        const encontrados = cuidado.perfis.filter(function (perfil) {
+            return perfil.codigo === codigo;
+        });
+
+        if (encontrados.length !== 1) {
+            throw new Error(`Perfil ausente ou duplicado: ${codigo}`);
+        }
+
+        const valor = encontrados[0].quantidade_estimada;
+        const quantidade = Number(valor);
+
+        if (
+            valor === null ||
+            valor === undefined ||
+            valor === "" ||
+            !Number.isSafeInteger(quantidade) ||
+            quantidade < 0
+        ) {
+            throw new Error(`Quantidade inválida no perfil: ${codigo}`);
+        }
+
+        demanda += quantidade;
+
+    });
+
+    return demanda;
+}
+
 async function obterMapa(ano) {
+
     if (!cacheMapas.has(ano)) {
-        const dados = await buscarAPG(`/territorio/geojson?ano=${ano}`);
+
+        // Consulta as geometrias e os perfis das 17 APGs.
+        const [dados, cuidados] = await Promise.all([
+            buscarAPG(`/territorio/geojson?ano=${ano}`),
+            buscarAPG(`/cuidados/perfis-apg?ano=${ano}`)
+        ]);
+
         validarGeoJSON(dados, ano);
+
+        if (
+            Number(cuidados.ano) !== ano ||
+            !Array.isArray(cuidados.apgs) ||
+            cuidados.apgs.length !== 17
+        ) {
+            throw new Error("Os perfis das 17 APGs estão incompletos.");
+        }
+
+        const demandasPorAPG = new Map();
+
+        cuidados.apgs.forEach(function (cuidado) {
+
+            const id = Number(cuidado.id_apg);
+
+            if (
+                !Number.isInteger(id) ||
+                demandasPorAPG.has(id)
+            ) {
+                throw new Error("APG inválida ou duplicada nos perfis.");
+            }
+
+            demandasPorAPG.set(
+                id,
+                calcularDemandaCuidado(cuidado)
+            );
+
+        });
+
+        // Associa a demanda à geometria da mesma APG.
+        dados.features.forEach(function (feature) {
+
+            const id = Number(feature.properties.id_apg);
+
+            if (!demandasPorAPG.has(id)) {
+                throw new Error(`Demanda não encontrada para a APG ${id}.`);
+            }
+
+            feature.properties.demanda_cuidado =
+                demandasPorAPG.get(id);
+
+        });
+
+        // Guarda apenas respostas completas e validadas.
         cacheMapas.set(ano, dados);
+
     }
 
     return cacheMapas.get(ano);
@@ -154,13 +269,15 @@ function validarGeoJSON(dados, ano) {
     });
 }
 
-function corPorPopulacao(valor) {
-    const populacao = inteiro(valor, "populacao_total");
+function corPorDemanda(valor) {
 
-    if (populacao <= 40000) return CORES_POPULACAO.baixa;
-    if (populacao <= 70000) return CORES_POPULACAO.moderada;
-    if (populacao <= 100000) return CORES_POPULACAO.alta;
-    return CORES_POPULACAO.muitoAlta;
+    const demanda = inteiro(valor, "demanda_cuidado");
+
+    const faixa = FAIXAS_CUIDADO.find(function (item) {
+        return demanda <= item.limite;
+    });
+
+    return faixa.cor;
 }
 
 
@@ -198,7 +315,7 @@ function configurarCamadaGeoJSON(geojson) {
                 color: "#ffffff",
                 weight: 2.2,
                 opacity: 1,
-                fillColor: corPorPopulacao(feature.properties.populacao_total),
+                fillColor: corPorDemanda(feature.properties.demanda_cuidado),
                 fillOpacity: .96
             };
         },
@@ -223,6 +340,14 @@ function configurarCamadaGeoJSON(geojson) {
             });
 
             camada.on("mouseover", function () {
+
+                camada.setTooltipContent(
+                    escaparHTML(nome) +
+                    "<br>Demanda estimada: " +
+                    formatarNumero(propriedade.demanda_cuidado) +
+                    " pessoas"
+                );
+
                 camada.setStyle({
                     weight: idAPG === idAPGSelecionada ? 4 : 3,
                     color: idAPG === idAPGSelecionada ? "#0b2859" : "#fff",
@@ -230,7 +355,13 @@ function configurarCamadaGeoJSON(geojson) {
                 });
             });
 
-            camada.on("mouseout", destacarSelecaoNoMapa);
+            camada.on("mouseout", function () {
+
+                camada.setTooltipContent(escaparHTML(nome));
+
+                destacarSelecaoNoMapa();
+
+            });
 
             // Permite ativar a região com Enter ou espaço quando
             // o elemento vetorial receber foco pelo teclado.
@@ -284,10 +415,28 @@ function mostrarCampinasInteira() {
 }
 
 function atualizarLegenda(ano) {
-    porId("titulo-legenda").textContent =
-        ano === 2022
-            ? "POPULAÇÃO TOTAL · 2022"
-            : `POPULAÇÃO ESTIMADA · ${ano}`;
+
+    const legenda = document.querySelector(".legenda-mapa");
+
+    const faixasHTML = FAIXAS_CUIDADO.map(function (faixa) {
+        return `
+            <div>
+                <span class="cor-legenda"
+                      style="background: ${faixa.cor};"></span>
+                ${faixa.texto}
+            </div>
+        `;
+    }).join("");
+
+    legenda.innerHTML = `
+        <strong id="titulo-legenda">
+            DEMANDA ESTIMADA DE CUIDADO · ${ano}
+        </strong>
+        <small>Dependência parcial + elevada</small>
+        ${faixasHTML}
+    `;
+
+    legenda.hidden = false;
 }
 
 
@@ -309,14 +458,16 @@ function preencherEstadoVazio() {
             })
             .slice()
             .sort(function (a, b) {
-                return Number(b.populacao_total) - Number(a.populacao_total);
+                return Number(b.demanda_cuidado) - Number(a.demanda_cuidado);
             })
             .slice(0, 2);
 
-        maioresTexto = "Maiores populações totais em " + anoAtualAPG + ": " +
+        maioresTexto = "Maiores demandas estimadas de cuidado em " +
+            anoAtualAPG + ": " +
             maiores.map(function (item) {
                 return item.codigo_apg + " (" +
-                    formatarNumero(item.populacao_total) + ")";
+                    formatarNumero(item.demanda_cuidado) +
+                    " pessoas)";
             }).join(" e ") + ".";
     }
 
@@ -613,10 +764,12 @@ function atualizarFonteAno(ano, meta) {
 
     porId("nota-metodologica").textContent =
         ano === 2022
-            ? "Fonte: IBGE, Censo 2022. Dados 60+ limitados aos setores com divulgação etária; " +
+            ? "Cores: soma estimada dos perfis de dependência parcial e elevada. " +
+              "Fonte: IBGE, Censo 2022. Dados 60+ limitados aos setores com divulgação etária; " +
               "o percentual 60+ usa apenas a população desses setores como denominador. " +
               "Dados ausentes não equivalem a zero. Perfis de cuidado: estimativas TechCare/PNS 2019."
-            : `Fonte: Fundação Seade (projeções municipais) e TechCare (distribuição estimada por APG para ${ano}). ` +
+            : "Cores: soma estimada dos perfis de dependência parcial e elevada. " +
+              `Fonte: Fundação Seade (projeções municipais) e TechCare (distribuição estimada por APG para ${ano}). ` +
               "Não são projeções oficiais da Seade por APG. Perfis de cuidado: estimativas do TechCare/PNS 2019.";
 }
 
