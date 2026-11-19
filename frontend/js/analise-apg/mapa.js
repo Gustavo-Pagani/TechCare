@@ -95,13 +95,6 @@ export function configurarCamadaGeoJSON(geojson, aoSelecionarAPG) {
 
             camada.on("mouseover", function () {
 
-                camada.setTooltipContent(
-                    escaparHTML(nome) +
-                    "<br>Demanda estimada: " +
-                    formatarNumero(propriedade.demanda_cuidado) +
-                    " pessoas"
-                );
-
                 camada.setStyle({
                     weight: idAPG === idAPGSelecionada ? 4 : 3,
                     color: idAPG === idAPGSelecionada ? "#0b2859" : "#fff",

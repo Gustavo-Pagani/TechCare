@@ -22,6 +22,13 @@ body {
     background: radial-gradient(circle at 65% 0, #fff 0, #edf6f9 58%);
 }
 
+#sidebar {
+    flex: 0 0 293px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+}
 
 .pagina-apg,
 .pagina-apg * { box-sizing: border-box; }
@@ -100,6 +107,7 @@ body {
 .botao-ano:hover:not(.selecionado):not(:disabled) { background: #eef9f9; }
 .botao-ano.selecionado { background: var(--apg-turquesa); color: #fff; }
 .botao-ano:disabled { cursor: progress; opacity: .7; }
+
 .botao-ano:focus-visible,
 .botao-mapa-inteiro:focus-visible,
 .botao-limpar:focus-visible {
@@ -299,20 +307,34 @@ body {
     border-color: #cbd8df;
 }
 
+/* Nomes das APGs mais leves e compactos */
 .area-mapa .leaflet-tooltip.etiqueta-apg {
+    background: transparent;
     border: 0;
-    border-radius: 4px;
-    padding: 4px 8px;
-    background: rgba(255,255,255,.92);
-    box-shadow: 0 2px 8px rgba(21, 50, 65, .10);
+    box-shadow: none;
+    padding: 0;
+
+    max-width: 70px;
+    white-space: normal;
+    text-align: center;
+
     color: #0b2859;
     font-family: "Manrope", Arial, sans-serif;
     font-size: 10px;
     font-weight: 800;
-    white-space: nowrap;
+    line-height: 1.15;
+
+    text-shadow:
+        -1px -1px 0 #fff,
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff,
+         0    0   3px #fff;
+
     pointer-events: none;
 }
 
+/* Esconde a seta padrão dos rótulos */
 .area-mapa .leaflet-tooltip.etiqueta-apg::before { display: none; }
 
 /* 3. Painel lateral à direita */
@@ -572,6 +594,9 @@ body {
 }
 
 @media (max-width: 760px) {
+    body { display: block; }
+    #sidebar { position: relative; width: 100%; height: auto; }
+    #sidebar .sidebar { width: 100%; height: auto; min-height: 0; }
     .pagina-apg { padding: 16px; }
     .subtitulo { font-size: 15px; }
     .acoes-cabecalho { flex-wrap: wrap; }
