@@ -10,7 +10,7 @@
    NÃO utiliza imagens ou números inventados.
 ========================================================= */
 
-const API_APG = "http://127.0.0.1:8000/api/v1";
+const API_APG = API_BASE;
 const ANOS_APG = [2022, 2030, 2040, 2050];
 
 const numeroBR = new Intl.NumberFormat("pt-BR");

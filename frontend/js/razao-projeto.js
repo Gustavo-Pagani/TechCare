@@ -9,8 +9,7 @@
    1. CONFIGURAÇÕES
 ========================= */
 
-const enderecoApi = "http://127.0.0.1:8000/api/v1";
-
+const enderecoApi = API_BASE;
 const formatoNumero = new Intl.NumberFormat("pt-BR");
 
 const formatoPercentual = new Intl.NumberFormat("pt-BR", {

@@ -14,8 +14,7 @@
    1. CONFIGURAÇÕES
 ========================= */
 
-const API_VISAO = "http://127.0.0.1:8000/api/v1";
-
+const API_VISAO = API_BASE;
 const ANOS_VISAO = [2022, 2030, 2040, 2050];
 
 const formatarInteiro = new Intl.NumberFormat("pt-BR");

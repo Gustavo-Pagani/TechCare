@@ -1,3 +1,5 @@
+// Endereço compartilhado da API do TechCare
+const API_BASE = "http://127.0.0.1:8000/api/v1";
 
 document.addEventListener("DOMContentLoaded", function () {
 

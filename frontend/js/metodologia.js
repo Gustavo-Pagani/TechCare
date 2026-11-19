@@ -5,8 +5,8 @@
 ========================================= */
 
 // Endereço da API
-const urlIndicadores = "http://127.0.0.1:8000/api/v1/indicadores/resumo-municipal";
-
+const urlIndicadores =
+    `${API_BASE}/indicadores/resumo-municipal`;
 // Formatação dos números brasileiros
 const formatoNumero = new Intl.NumberFormat("pt-BR");
 

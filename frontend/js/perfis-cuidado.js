@@ -17,8 +17,7 @@
 
 // Endereço da API de perfis de cuidado
 const API_CUIDADOS =
-    "http://127.0.0.1:8000/api/v1/cuidados/perfis-municipio";
-
+    `${API_BASE}/cuidados/perfis-municipio`;
 // Anos disponíveis na plataforma
 const ANOS_PERMITIDOS = [2022, 2030, 2040, 2050];
 
